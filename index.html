@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Briefing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Daily Briefing</h1>
+    </header>
+    <main>
+        <section id="news-section">
+            <h2>Global News & Markets</h2>
+            <div class="news-container">
+                <div class="news-category">
+                    <h3>USA News</h3>
+                    <ul id="usa-news"></ul>
+                </div>
+                <div class="news-category">
+                    <h3>Iran News</h3>
+                    <ul id="iran-news"></ul>
+                </div>
+                <div class="news-category">
+                    <h3>USA Stock Market</h3>
+                    <p id="usa-stock-market"></p>
+                </div>
+                <div class="news-category">
+                    <h3>Gold Price</h3>
+                    <p id="gold-price"></p>
+                </div>
+                <div class="news-category">
+                    <h3>US$ Index</h3>
+                    <p id="usd-index"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="todo-section">
+            <h2>Weekly To-Do Tasks</h2>
+            <table id="todo-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- To-do tasks will be loaded here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Daily Briefing</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
