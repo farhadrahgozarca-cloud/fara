@@ -1,4 +1,4 @@
-style.css:
+style.css (no changes, still the same as before):
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -81,7 +81,8 @@ section {
     text-align: left;
 }
 
-#todo-table th {background-color: #ecf0f1; /* Light header for table */
+#todo-table th {
+    background-color: #ecf0f1; /* Light header for table */
     color: #555;
 }
 
@@ -89,8 +90,7 @@ section {
     background-color: #f6f6f6;
 }
 
-#todo-table tbody tr:hover {
-    background-color: #e9f5ff; /* Hover effect */
+#todo-table tbody tr:hover {background-color: #e9f5ff; /* Hover effect */
 }
 
 .todo-status.done {
