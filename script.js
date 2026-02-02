@@ -1,25 +1,12 @@
-script.js:
-
 document.addEventListener('DOMContentLoaded', () => {
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Placeholder for loading news
-    loadNews();
+    // The news and market data are now statically loaded in index.html, so no dynamic loading needed here.
 
     // Placeholder for loading todo tasks
     loadTodoTasks();
 });
-
-function loadNews() {
-    // This function will be implemented later to fetch and display news
-    console.log("Loading news...");
-    document.getElementById('usa-news').innerHTML = '<li>Loading USA News...</li>';
-    document.getElementById('iran-news').innerHTML = '<li>Loading Iran News...</li>';
-    document.getElementById('usa-stock-market').textContent = 'Loading...';
-    document.getElementById('gold-price').textContent = 'Loading...';
-    document.getElementById('usd-index').textContent = 'Loading...';
-}
 
 function loadTodoTasks() {
     // This function will be implemented later to load and display todo tasks
@@ -57,14 +44,14 @@ function loadTodoTasks() {
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.className = 'delete';
-        deleteButton.onclick = () => deleteTask(task.id);
+        deleteButton.onclick = () => deleteTask(id);
         actionsCell.appendChild(deleteButton);
     });
 }
 
 function toggleTaskStatus(id) {
     console.log(`Toggle status for task ${id}`);
-  // Logic to update task status will go here
+    // Logic to update task status will go here
     loadTodoTasks(); // Reload for demonstration
 }
 
