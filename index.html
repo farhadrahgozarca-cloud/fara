@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>FARA GYM Workout Planner</title>
+<meta name="description" content="FARA GYM: 5 workout plans with demos, set trackers and timers, an athlete food guide, and an offline Ask AI coach for workout questions.">
+<meta name="keywords" content="workout planner, AMRAP workout, 30 minute workout, full body strength workout, 4-3-2-1 workout, beginner at home workout for women, 4 week workout plan, 7 day home workout plan, no equipment workout, workout questions, ask AI fitness coach, glute workout at home, circuit training timer, exercise instructions">
+<meta property="og:title" content="FARA GYM Workout Planner">
+<meta property="og:description" content="Three ready to run workouts with animated exercise demos, step by step instructions, completion checklists, AMRAP and interval timers.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://claude.ai/artifact/BkssPCc3xyeSsDLN9erPdW">
+<meta name="application-name" content="FARA GYM">
+<meta name="apple-mobile-web-app-title" content="FARA GYM">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0E1828">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "FARA GYM Workout Planner",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any web browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+      "description": "Workout planner with preset AMRAP, circuit and 4-3-2-1 routines, animated exercise demos, instructions, completion checkboxes and workout timers.",
+      "featureList": ["AMRAP countdown timer with round counter", "Guided interval timer with audio cues", "Animated exercise demonstrations", "Step by step exercise instructions", "Completion checklist per exercise", "Rest timers"]
+    },
+    {
+      "@type": "ExercisePlan",
+      "name": "AMRAP 30 Muscle Building",
+      "exerciseType": "Strength training, AMRAP",
+      "activityDuration": "PT30M",
+      "activityFrequency": "4 days per week: Monday, Tuesday, Thursday, Saturday",
+      "restPeriods": "60 to 90 seconds between rounds"
+    },
+    {
+      "@type": "ExercisePlan",
+      "name": "30 Minute Full Body Strength",
+      "exerciseType": "Circuit training",
+      "activityDuration": "PT30M",
+      "repetitions": "3 circuits, 2 rounds each, 60 seconds per exercise",
+      "restPeriods": "60 seconds after each round"
+    },
+    {
+      "@type": "ExercisePlan",
+      "name": "4-3-2-1 Workout",
+      "exerciseType": "Circuit training",
+      "activityDuration": "PT23M",
+      "repetitions": "2 or 3 rounds of 10 minutes",
+      "restPeriods": "1 to 2 minutes between rounds"
+    },
+    {
+      "@type": "ExercisePlan",
+      "name": "Beginner's 4-Week At-Home Plan",
+      "exerciseType": "Bodyweight strength and cardio",
+      "activityDuration": "PT45M",
+      "activityFrequency": "5 days per week: glutes, cardio, arms, cardio, core, then 2 rest days",
+      "repetitions": "3 rounds on strength days, add a 4th when it gets easy",
+      "audience": { "@type": "PeopleAudience", "audienceType": "Beginners training at home" }
+    },
+    {
+      "@type": "ExercisePlan",
+      "name": "7-Day Home Workout Plan",
+      "exerciseType": "Bodyweight strength, core, cardio and active recovery",
+      "activityDuration": "PT45M",
+      "activityFrequency": "7 days: upper body, lower body, core, full body circuit, glutes and legs, cardio, active recovery",
+      "repetitions": "3 to 4 sets of 10 to 20 reps or 30 to 45 second holds"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does AMRAP mean?", "acceptedAnswer": { "@type": "Answer", "text": "AMRAP stands for as many rounds as possible. You repeat the exercise list for a fixed time, here 30 minutes, and count how many full rounds you complete." } },
+        { "@type": "Question", "name": "How long are these workouts?", "acceptedAnswer": { "@type": "Answer", "text": "The AMRAP and full body workouts take 30 minutes. The 4-3-2-1 workout takes about 23 minutes for 2 rounds or 35 minutes for 3 rounds, including rest." } },
+        { "@type": "Question", "name": "What equipment do I need?", "acceptedAnswer": { "@type": "Answer", "text": "Dumbbells cover most exercises. The AMRAP plan also uses a pull-up bar, dip bars and a cable or resistance band. A kettlebell is used once, and a dumbbell can replace it." } },
+        { "@type": "Question", "name": "Which plan is best for beginners?", "acceptedAnswer": { "@type": "Answer", "text": "The Beginner's 4-Week At-Home plan. It uses bodyweight moves, a chair and a wall, with 30 to 45 minute sessions five days a week and two rest days." } },
+        { "@type": "Question", "name": "Is my progress saved?", "acceptedAnswer": { "@type": "Answer", "text": "No. Checkboxes, rounds and timers reset when you close or reload the page, so every visit starts fresh." } }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* Layout: a single phone-width training column. Home lists the plates (workouts); a workout opens into day/circuit tabs with exercise cards; the guided player takes over the screen. */
+:root{
+  --bg:#EDF0F3; --surface:#FFFFFF; --surface-2:#E2E7EC; --ink:#131A22; --muted:#596574; --line:#CBD3DC; --fig-far:#97A3B0;
+  --accent:#F2B705; --accent-ink:#1B1500; --accent-text:#7E5D00;
+  --red:#D33143; --blue:#2369D0; --green:#1F8A54; --ok:#1F8A54; --rose:#C4507A; --teal:#11807E;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1217; --surface:#161C23; --surface-2:#1F2731; --ink:#EDF1F5; --muted:#93A0AD; --line:#2A3440; --fig-far:#566372;
+  --accent:#F5C518; --accent-ink:#1B1500; --accent-text:#F5C518;
+  --red:#F0566A; --blue:#5B9BF5; --green:#43C182; --ok:#43C182; --rose:#E07A9E; --teal:#33BDB8; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1217; --surface:#161C23; --surface-2:#1F2731; --ink:#EDF1F5; --muted:#93A0AD; --line:#2A3440; --fig-far:#566372;
+  --accent:#F5C518; --accent-ink:#1B1500; --accent-text:#F5C518;
+  --red:#F0566A; --blue:#5B9BF5; --green:#43C182; --ok:#43C182; --rose:#E07A9E; --teal:#33BDB8; color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,summary:focus-visible,input:focus-visible+span,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.app{max-width:560px;margin:0 auto;padding-inline:16px;padding-block:12px 110px}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:.01em}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0}
+
+/* Loader */
+#loader{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-items:center;transition:opacity .35s}
+#loader.out{opacity:0;pointer-events:none}
+.ld{display:grid;justify-items:center;gap:18px;padding:16px}
+.ld svg{width:min(280px,80vw);height:auto}
+.ld p{font-family:var(--display);font-size:30px;font-weight:700;margin:0;letter-spacing:.02em}
+.ld .bar{stroke:var(--muted);stroke-width:4;stroke-linecap:round}
+.ld rect{transform-box:fill-box;transform-origin:center}
+.pl1{fill:var(--red)}.pl2{fill:var(--blue)}.pl3{fill:var(--accent)}.pl4{fill:var(--green)}
+@keyframes slideL{from{transform:translateX(-90px);opacity:0}to{transform:none;opacity:1}}
+@keyframes slideR{from{transform:translateX(90px);opacity:0}to{transform:none;opacity:1}}
+.ld .L{animation:slideL .5s cubic-bezier(.2,.8,.2,1) both}.ld .R{animation:slideR .5s cubic-bezier(.2,.8,.2,1) both}
+.ld .d1{animation-delay:.15s}.ld .d2{animation-delay:.75s}.ld .d3{animation-delay:1.35s}.ld .d4{animation-delay:1.95s}
+.ld .dots::after{content:"";display:inline-block;width:1.2em;text-align:left;animation:dots 1.2s steps(4) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+
+/* Home */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:6px 14px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand b{font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:.03em}
+.disc{width:28px;height:28px;border-radius:50%;background:var(--plate,var(--accent));box-shadow:inset 0 0 0 5px color-mix(in srgb,var(--plate,var(--accent)) 70%,#000 30%);position:relative;flex:none}
+.disc::after{content:"";position:absolute;inset:38%;border-radius:50%;background:var(--bg)}
+.date{color:var(--muted);font-weight:600;font-size:13px}
+.today{background:var(--ink);color:var(--bg);border-radius:20px;padding:20px;display:grid;gap:12px;margin-bottom:14px;position:relative;overflow:hidden}
+.today .eyebrow{color:color-mix(in srgb,var(--bg) 65%,var(--ink))}
+.today h2{font-size:38px;font-weight:800}
+.today p{margin:0;opacity:.85}
+.today .go{justify-self:start}
+.today .ring-bg{position:absolute;right:-50px;top:-50px;width:170px;height:170px;border-radius:50%;border:22px solid var(--plate,var(--accent));opacity:.9}
+.today .ring-bg::after{content:"";position:absolute;inset:44px;border-radius:50%;border:3px solid var(--bg);opacity:.3}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font-weight:700;font-size:15px;background:var(--accent);color:var(--accent-ink);min-height:46px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.small{padding:8px 14px;min-height:38px;font-size:14px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:26px}
+.wd{background:var(--surface);border-radius:12px;padding:8px 0 10px;display:grid;justify-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--muted)}
+.wd b{font-family:var(--display);font-size:20px;color:var(--ink)}
+.wd i{width:8px;height:8px;border-radius:50%;background:transparent}
+.wd.on i{background:var(--red)}
+.wd.now{box-shadow:inset 0 0 0 2px var(--ink)}
+.sec-title{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 10px}
+.sec-title h2{font-size:26px}
+.lib{display:grid;gap:12px;margin-bottom:30px}
+.wcard{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);border-radius:var(--r);padding:16px;border:0;text-align:left;width:100%}
+.wcard .disc{width:46px;height:46px;box-shadow:inset 0 0 0 8px color-mix(in srgb,var(--plate) 72%,#000 28%)}
+.wcard h3{font-size:24px;font-weight:800;margin-bottom:2px}
+.wcard p{margin:0;color:var(--muted);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--surface-2);color:var(--ink)}
+.faq{display:grid;gap:8px;margin-bottom:24px}
+.faq details{background:var(--surface);border-radius:12px;padding:12px 14px}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin:8px 0 0;color:var(--muted);max-width:65ch}
+.credit{font-size:12px;color:var(--muted);max-width:65ch}
+
+/* Workout view */
+.bar-top{display:flex;align-items:center;gap:10px;padding-block:4px 12px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:0;background:var(--surface);display:grid;place-items:center;flex:none}
+.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.bar-top .t{font-weight:700;font-size:15px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{display:grid;gap:10px;margin-bottom:16px}
+.hero-row{display:flex;gap:14px;align-items:center}
+.hero .disc{width:56px;height:56px;box-shadow:inset 0 0 0 10px color-mix(in srgb,var(--plate) 72%,#000 28%)}
+.hero h1{font-size:40px;font-weight:800}
+.hero p{margin:0;color:var(--muted);max-width:65ch}
+.opts{display:grid;gap:10px;background:var(--surface);border-radius:var(--r);padding:14px}
+.opt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.opt-row span{font-weight:600;font-size:14px}
+.seg{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;border-radius:12px;padding:8px 14px;background:var(--surface);font-weight:700;display:grid;text-align:left;line-height:1.2}
+.tab small{font-weight:600;color:var(--muted);font-size:11px}
+.tab[aria-selected="true"]{background:var(--plate);color:#fff}
+.tab[aria-selected="true"] small{color:rgba(255,255,255,.85)}
+.sec-head{display:grid;gap:4px;margin-bottom:12px}
+.sec-head h2{font-size:30px;font-weight:800}
+.sec-head p{margin:0;color:var(--muted);font-size:14px}
+.progress{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden;margin-top:6px}
+.progress i{display:block;height:100%;background:var(--plate);border-radius:99px;transition:width .3s}
+.prog-label{font-size:12px;color:var(--muted);font-weight:600}
+
+/* AMRAP panel */
+.amrap{background:var(--ink);color:var(--bg);border-radius:20px;padding:16px;display:grid;gap:12px;margin-bottom:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 58px);z-index:4}
+.amrap .clockrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.amrap .clock{font-family:var(--display);font-weight:800;font-size:64px;line-height:.9;font-variant-numeric:tabular-nums}
+.amrap .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.amrap .rounds{text-align:right}
+.amrap .rounds b{font-family:var(--display);font-size:44px;font-weight:800;line-height:.9;display:block}
+.amrap .ctrls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.amrap .btn.ghost{color:var(--bg);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--bg) 35%,transparent)}
+.amrap .rest{display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent);padding-top:10px;font-size:13px;font-weight:600}
+.amrap .rest .resttime{font-family:var(--display);font-size:28px;font-weight:800;color:var(--accent);margin-left:auto;font-variant-numeric:tabular-nums}
+.pm{width:34px;height:34px;border-radius:50%;border:0;background:color-mix(in srgb,var(--bg) 14%,transparent);color:var(--bg);font-weight:800;font-size:18px}
+.amrap.resting{box-shadow:0 0 0 3px var(--accent)}
+
+/* Exercise card */
+.list{display:grid;gap:10px}
+.ex{background:var(--surface);border-radius:var(--r);padding:12px;display:grid;grid-template-columns:108px 1fr;gap:4px 14px;transition:opacity .2s}
+.ex-fig{grid-row:span 1;background:var(--surface-2);border-radius:10px;aspect-ratio:1;max-width:100%;display:grid;place-items:center;overflow:hidden}
+.ex-fig svg{width:100%;height:100%}
+.ex-main{min-width:0;display:grid;gap:2px;align-content:start}
+.ex-n{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em}
+.ex h3{font-size:23px;font-weight:800}
+.ex-target{margin:0;font-weight:700;color:var(--ink);font-size:14px}
+.ex-mus{margin:0;color:var(--muted);font-size:13px}
+.ex-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.ex-how{grid-column:1/-1;border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
+.ex-how summary{font-weight:700;font-size:14px;cursor:pointer;color:var(--accent-text);list-style:none;display:flex;align-items:center;gap:6px}
+.ex-how summary::-webkit-details-marker{display:none}
+.ex-how summary::before{content:"+";font-size:18px;width:16px}
+.ex-how[open] summary::before{content:"-"}
+.ex-how ol{margin:8px 0 6px;padding-left:20px;display:grid;gap:4px;max-width:65ch}
+.ex-how p{margin:4px 0 0;font-size:13px;color:var(--muted);max-width:65ch}
+.ex-how p b{color:var(--ink)}
+.ex.done{opacity:.62}
+.ex.done h3{text-decoration:line-through;text-decoration-thickness:2px}
+.check{display:inline-flex;align-items:center;gap:8px;cursor:pointer;user-select:none;font-weight:700;font-size:14px}
+.check input{position:absolute;opacity:0;width:1px;height:1px}
+.check span{display:inline-flex;align-items:center;gap:8px}
+.check span::before{content:"";width:26px;height:26px;border-radius:8px;box-shadow:inset 0 0 0 2px var(--line);background:var(--surface) center/16px no-repeat;transition:background-color .15s}
+.check input:checked+span::before{background-color:var(--ok);box-shadow:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.ctimer{--pct:0;border:0;border-radius:999px;padding:7px 12px 7px 8px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;background:var(--surface-2)}
+.ctimer i{width:22px;height:22px;border-radius:50%;background:conic-gradient(var(--plate) calc(var(--pct)*1%),color-mix(in srgb,var(--muted) 30%,transparent) 0);display:block;position:relative}
+.ctimer i::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--surface-2)}
+.ctimer.run{background:var(--ink);color:var(--bg)}
+.ctimer.run i::after{background:var(--ink)}
+.start-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* Player */
+#player{position:fixed;inset:0;z-index:30;background:var(--bg);overflow-y:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.pl{max-width:560px;margin:0 auto;padding-inline:16px;padding-block:12px 24px;display:grid;gap:12px;min-height:100%}
+.pl-top{display:flex;align-items:center;gap:10px}
+.pl-top .t{flex:1;min-width:0;font-weight:700;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pl-bar{height:6px;border-radius:9px;background:var(--surface-2);overflow:hidden}
+.pl-bar i{display:block;height:100%;background:var(--plate);transition:width .3s}
+.pl-kind{display:inline-block;justify-self:start;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--plate);color:#fff}
+.pl-kind.rest{background:var(--accent);color:var(--accent-ink)}
+.pl-kind.ready{background:var(--ink);color:var(--bg)}
+.pl-stage{display:grid;grid-template-columns:1fr;gap:12px;justify-items:center;text-align:center}
+.pl-fig{width:min(240px,62vw);aspect-ratio:1;max-width:100%;background:var(--surface);border-radius:24px;overflow:hidden}
+.pl-fig svg{width:100%;height:100%}
+.pl h2{font-size:38px;font-weight:800}
+.pl .ctx{margin:0;color:var(--muted);font-weight:600;font-size:14px}
+.pl .cue{margin:0;max-width:40ch;font-size:14px}
+.ring{position:relative;width:min(200px,55vw);aspect-ratio:1;max-width:100%}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .trk{stroke:var(--surface-2);fill:none;stroke-width:9}
+.ring .val{stroke:var(--plate);fill:none;stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.ring.rest .val{stroke:var(--accent)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:64px;font-variant-numeric:tabular-nums}
+.pl-next{margin:0;color:var(--muted);font-size:14px}
+.pl-next b{color:var(--ink)}
+.pl-ctrl{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:4px}
+.pl-ctrl .icon-btn{width:52px;height:52px}
+.pl-ctrl .main{width:76px;height:76px;background:var(--ink);color:var(--bg)}
+.pl-ctrl .main svg{width:28px;height:28px}
+.done-card{display:grid;gap:14px;justify-items:center;text-align:center;padding-block:40px}
+.done-card h2{font-size:48px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.stat{background:var(--surface);border-radius:14px;padding:12px 18px;display:grid;min-width:110px}
+.stat b{font-family:var(--display);font-size:34px;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted);font-weight:600}
+.toast{position:fixed;left:50%;bottom:calc(82px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;z-index:60;max-width:calc(100% - 32px);text-align:center}
+
+/* Figures */
+.fig .limb{stroke:var(--ink);stroke-width:3.6;stroke-linecap:round}
+.fig .far{stroke:var(--fig-far)}
+.fig .head{fill:var(--ink)}
+.fig .metal{stroke:var(--muted);stroke-width:2.2;stroke-linecap:round;fill:none}
+.fig .metal-f{fill:var(--muted)}
+.fig .plate{fill:var(--plate,var(--accent))}
+.fig .ground{stroke:var(--line);stroke-width:1.6}
+/* Her theme: blush marble, rose, serif display. Scoped to .her (body on the plan screen, its card on home). */
+.her{
+  --bg:#F6E6E3; --surface:#FFF7F5; --surface-2:#F1D9D5; --ink:#5A2A3A; --muted:#8C5E6B; --line:#E6C3BE; --fig-far:#C9A0A8;
+  --accent:#C4507A; --accent-ink:#FFFFFF; --accent-text:#A43A62; --ok:#B8476F; --rose:#C4507A; --glow:#FBD3D9;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif; --r:20px;
+  --veins:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='640' viewBox='0 0 420 640'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.8' stroke-width='1.3'%3E%3Cpath d='M-10 80 C80 120 120 60 210 130 S330 210 430 170'/%3E%3Cpath d='M-10 330 C60 300 140 380 220 340 S340 280 430 330' stroke-width='.8'/%3E%3Cpath d='M60 -10 C90 120 40 220 120 320 S170 520 140 650' stroke-width='.7'/%3E%3C/g%3E%3Cpath d='M300 -10 C280 140 360 240 320 380 S260 560 300 650' fill='none' stroke='%23C98B7B' stroke-opacity='.35' stroke-width='1'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .her{
+  --bg:#1D1317; --surface:#2A1B21; --surface-2:#36242C; --ink:#F7E4E8; --muted:#C79CA8; --line:#4B3139; --fig-far:#7A5662;
+  --accent:#E88AA5; --accent-ink:#2A0F18; --accent-text:#F0A3B8; --ok:#E07A9E; --rose:#E07A9E; --glow:#3A1F2A;
+  --veins:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='640' viewBox='0 0 420 640'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.3'%3E%3Cpath d='M-10 80 C80 120 120 60 210 130 S330 210 430 170'/%3E%3Cpath d='M-10 330 C60 300 140 380 220 340 S340 280 430 330'/%3E%3Cpath d='M60 -10 C90 120 40 220 120 320 S170 520 140 650'/%3E%3C/g%3E%3C/svg%3E");
+  color-scheme:dark;
+}}
+:root[data-theme="dark"] .her{
+  --bg:#1D1317; --surface:#2A1B21; --surface-2:#36242C; --ink:#F7E4E8; --muted:#C79CA8; --line:#4B3139; --fig-far:#7A5662;
+  --accent:#E88AA5; --accent-ink:#2A0F18; --accent-text:#F0A3B8; --ok:#E07A9E; --rose:#E07A9E; --glow:#3A1F2A;
+  --veins:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='640' viewBox='0 0 420 640'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.3'%3E%3Cpath d='M-10 80 C80 120 120 60 210 130 S330 210 430 170'/%3E%3Cpath d='M-10 330 C60 300 140 380 220 340 S340 280 430 330'/%3E%3Cpath d='M60 -10 C90 120 40 220 120 320 S170 520 140 650'/%3E%3C/g%3E%3C/svg%3E");
+  color-scheme:dark;
+}
+body.her{background-color:var(--bg);background-image:var(--veins),radial-gradient(circle at 12% 6%,var(--glow),transparent 42%),radial-gradient(circle at 92% 62%,var(--glow),transparent 38%);background-size:420px 640px,auto,auto;background-attachment:fixed}
+.her h1,.her h2,.her h3{letter-spacing:0;font-weight:700}
+.her .hero h1{font-size:34px}
+.her .sec-head h2{font-size:34px}
+.her .ex h3{font-size:21px}
+.her .amrap .clock{font-size:52px}
+.her .disc,.wcard.her .disc,.her .hero .disc{box-shadow:none;background:radial-gradient(circle at 34% 30%,rgba(255,255,255,.75),transparent 46%),var(--plate)}
+.her .disc::after{display:none}
+.her .tab{border-radius:999px;padding-inline:16px}
+.her .bar-top{background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.her .ex-fig{background:linear-gradient(160deg,var(--surface-2),var(--surface))}
+.wcard.her{background:linear-gradient(135deg,var(--surface),var(--surface-2));color:var(--ink)}
+.wcard.her h3{font-size:22px}
+.wcard.her .chip{background:color-mix(in srgb,var(--rose) 14%,var(--surface))}
+.tips{background:var(--surface-2);border-radius:12px;padding:12px 14px}
+.tips ul{margin:6px 0 0;padding-left:18px;display:grid;gap:2px;font-weight:600}
+.restday{background:var(--surface);border-radius:var(--r);padding:24px;display:grid;gap:10px;justify-items:start}
+.restday h3{font-size:30px}
+.restday p{margin:0;color:var(--muted);max-width:65ch}
+.restday ul{margin:0;padding-left:18px;font-weight:600}
+.fig .hair{fill:var(--ink)}
+/* Ask AI */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.ai-fab{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 18px 12px 14px;font-weight:800;font-size:15px;background:var(--ink);color:var(--bg);box-shadow:0 8px 24px rgba(10,18,30,.28)}
+.ai-fab svg{width:20px;height:20px;fill:var(--accent)}
+.ai{position:fixed;inset:0;z-index:40;background:rgba(8,12,18,.45);display:flex;align-items:flex-end;justify-content:center}
+.ai-panel{width:100%;max-width:560px;height:min(86%,720px);background:var(--bg);color:var(--ink);border-radius:22px 22px 0 0;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -10px 40px rgba(0,0,0,.25)}
+.ai-head{display:flex;align-items:center;gap:12px;padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.ai-head b{display:block;font-family:var(--display);font-size:24px;font-weight:800;line-height:1}
+.ai-head small{color:var(--muted);font-weight:600;font-size:12px}
+.ai-badge{width:40px;height:40px;border-radius:12px;background:var(--ink);display:grid;place-items:center;flex:none}
+.ai-badge svg{width:22px;height:22px;fill:var(--accent)}
+.ai-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;border-radius:16px;padding:10px 14px;font-size:15px;line-height:1.5}
+.msg p{margin:0}
+.msg.me{align-self:flex-end;background:var(--ink);color:var(--bg);border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-start;background:var(--surface);border-bottom-left-radius:4px;display:grid;gap:10px;justify-items:start}
+.rel{display:flex;flex-wrap:wrap;gap:6px}
+.rel span{width:100%;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qchip{border:0;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;background:var(--surface-2);text-align:left}
+.typing{display:flex;gap:4px;padding:14px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.ai-form{display:flex;gap:8px;padding:12px 16px 16px;border-top:1px solid var(--line)}
+.ai-form input{flex:1;min-width:0;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:10px 16px;font:inherit;font-size:16px}
+.ai-form input:focus{outline:none;border-color:var(--accent)}
+.ai.kb{align-items:flex-start}
+.ai.kb .ai-panel{height:100%;max-height:100%;border-radius:0 0 22px 22px}
+@media (max-width:700px){.ai.kb .ai-panel{height:min(100%,58vh)}}
+.ai-form{padding-bottom:22px}
+.msg .mut{color:var(--muted);font-size:13px}
+.msg.bot p b{font-weight:700}
+/* Fuel guide */
+.wcard.fuel .disc{box-shadow:inset 0 0 0 8px color-mix(in srgb,var(--plate) 72%,#000 28%)}
+.f-search input{width:100%;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:10px 14px;font:inherit;font-size:16px}
+.f-search input:focus{outline:none;border-color:var(--accent)}
+.chip.f-cat{border:0;cursor:pointer;padding:6px 12px}
+.chip.f-cat.on{background:var(--ink);color:var(--bg)}
+.f-wrap{overflow-x:auto;background:var(--surface);border-radius:var(--r)}
+.ftable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:14px}
+.ftable th{position:sticky;top:0;background:var(--surface);text-align:left;padding:0;border-bottom:2px solid var(--line)}
+.ftable th.num{text-align:right}
+.ftable th button{border:0;background:none;padding:12px 10px;font-weight:800;font-size:13px;width:100%;text-align:inherit;display:block;line-height:1.2}
+.ftable th button small{display:block;font-weight:600;color:var(--muted);font-size:11px}
+.ftable th button[aria-sort="ascending"],.ftable th button[aria-sort="descending"]{color:var(--accent-text)}
+.ftable td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.ftable tr:last-child td{border-bottom:0}
+.ftable td.num{text-align:right;white-space:nowrap}
+.f-name{min-width:130px}
+.f-name small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.f-p i{display:block;height:4px;border-radius:4px;background:var(--green);margin:6px 0 0 auto;max-width:56px}
+.f-empty{text-align:center;color:var(--muted);padding:24px}
+.logo{width:34px;height:34px;border-radius:9px;flex:none;display:block}
+.setrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.setp{width:36px;height:36px;border-radius:50%;border:0;background:var(--surface-2);font-weight:800;font-size:14px;font-variant-numeric:tabular-nums;transition:background-color .15s}
+.setp.on{background:var(--plate);color:#fff}
+@media (prefers-reduced-motion: reduce){.ld .L,.ld .R,.ld .dots::after{animation:none}#loader{transition:none}}
+@media (min-width:480px){.ex{grid-template-columns:128px 1fr}}
+</style>
+
+<style>@font-face{font-family:'Big Shoulders Display';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/big-shoulders-display-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Big Shoulders Display';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/big-shoulders-display-latin-700-normal.woff2) format('woff2')}@font-face{font-family:'Big Shoulders Display';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/big-shoulders-display-latin-800-normal.woff2) format('woff2')}@font-face{font-family:'Playfair Display';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/playfair-display-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/playfair-display-latin-700-normal.woff2) format('woff2')}@font-face{font-family:'Playfair Display';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/playfair-display-latin-800-normal.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/figtree-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/figtree-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/figtree-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/figtree-latin-700-normal.woff2) format('woff2')}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<div id="loader" role="status" aria-live="polite">
+  <div class="ld">
+    <svg viewBox="0 0 280 90" aria-hidden="true">
+      <line class="bar" x1="6" y1="45" x2="274" y2="45"/>
+      <rect class="bar" x="96" y="36" width="0" height="18"/>
+      <rect class="L d1 pl1" x="76" y="8" width="16" height="74" rx="3"/>
+      <rect class="R d1 pl1" x="188" y="8" width="16" height="74" rx="3"/>
+      <rect class="L d2 pl2" x="58" y="13" width="15" height="64" rx="3"/>
+      <rect class="R d2 pl2" x="207" y="13" width="15" height="64" rx="3"/>
+      <rect class="L d3 pl3" x="42" y="19" width="13" height="52" rx="3"/>
+      <rect class="R d3 pl3" x="225" y="19" width="13" height="52" rx="3"/>
+      <rect class="L d4 pl4" x="28" y="25" width="11" height="40" rx="3"/>
+      <rect class="R d4 pl4" x="241" y="25" width="11" height="40" rx="3"/>
+    </svg>
+    <p><span class="dots">Loading your workout</span></p>
+  </div>
+</div>
+
+<main class="app" id="app" aria-live="off"></main>
+<div id="player" hidden></div>
+<div class="toast" id="toast" hidden></div>
+<button class="ai-fab" id="ai-fab" data-act="ai-open" aria-label="Ask AI, offline workout coach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg>Ask AI</button>
+<div id="ai" class="ai" role="dialog" aria-modal="true" aria-labelledby="ai-title" hidden>
+  <div class="ai-panel">
+    <div class="ai-head"><span class="ai-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8z"/></svg></span><div style="min-width:0;flex:1"><b id="ai-title">Ask FARA AI</b><small>Works offline. Exercises, plans, food and 50 FAQs.</small></div><button class="icon-btn" data-act="ai-close" aria-label="Close Ask AI"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="ai-log" id="ai-log" aria-live="polite"></div>
+    <form class="ai-form" id="ai-form" autocomplete="off"><label for="ai-in" class="sr">Your question</label><input id="ai-in" type="text" placeholder="Ask about sets, rest, soreness, food..." maxlength="200"><button class="btn small" type="submit">Ask</button></form>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var LOGO="data:image/png;base64,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";
+var reduceMotion=false;try{reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+
+/* ---------- Pose helpers: joints h n p k1 f1 k2 f2 e1 w1 e2 w2 (x,y pairs) ---------- */
+var J={h:0,n:1,p:2,k1:3,f1:4,k2:5,f2:6,e1:7,w1:8,e2:9,w2:10};
+function pose(base,o){var a=base.slice();for(var k in o){a[J[k]*2]=o[k][0];a[J[k]*2+1]=o[k][1];}return a;}
+var ST=[60,13,60,24,60,53,61,73,60,93,59,73,58,93,61,38,62,52,59,38,58,52];
+var FRONT=[60,13,60,24,60,53,55,73,54,93,65,73,66,93,52,38,50,52,68,38,70,52];
+var SQ=[63,35,60,45,44,70,66,72,58,93,64,73,56,93,68,58,69,48,66,58,68,48];
+var PLANK=[92,63,82,68,50,78,34,85,18,92,34,85,18,92,83,80,84,92,81,80,82,92];
+var PDOWN=pose(PLANK,{h:[93,80],n:[82,83],p:[50,86],k1:[34,89],k2:[34,89],e1:[72,78],e2:[70,78]});
+var HB=[88,34,78,40,50,52,54,72,52,93,52,72,50,93,78,55,78,70,76,55,76,70];
+var LUNGE=[58,30,58,40,56,66,74,70,76,93,50,88,36,92,59,53,60,66,57,53,56,66];
+var LIEB=[18,86,28,88,56,88,70,70,80,93,68,70,78,93,36,90,38,78,34,90,36,78];
+var PRESS=pose(ST,{e1:[61,11],w1:[61,-2],e2:[59,11],w2:[59,-2]});
+var CURL=pose(ST,{w1:[69,30],w2:[67,30]});
+var JUMP=[60,4,60,15,59,44,60,64,58,84,58,64,56,84,57,29,54,43,55,29,52,43];
+var SQHANDS=[72,52,66,58,46,70,64,66,54,93,62,66,52,93,72,76,74,92,70,76,72,92];
+var SIDEPL=[90,57,80,62,52,76,34,84,16,91,34,82,16,88,80,92,94,92,70,72,56,76];
+
+/* ---------- Exercise library (add new exercises here) ---------- */
+var EX={
+ pullup:{name:"Pull-Up",muscles:"Lats, upper back, biceps",equip:"Pull-up bar",gear:"pullbar",
+  poses:[[60,33,60,42,60,68,57,80,56,92,63,80,64,92,46,28,44,13,74,28,76,13],[60,6,60,16,60,42,56,56,54,68,64,56,66,68,40,18,44,13,80,18,76,13]],
+  steps:["Grip the bar slightly wider than your shoulders, palms facing away.","Hang with straight arms, shoulders pulled down away from your ears.","Drive your elbows down and pull until your chin clears the bar.","Lower under control to a full hang before the next rep."],
+  tip:"Short of 8 reps? Use a resistance band or do slow lowering reps."},
+ goblet:{name:"Goblet Squat",muscles:"Quads, glutes, core",equip:"One dumbbell",gear:"db1v",
+  poses:[pose(ST,{e1:[63,40],w1:[66,30],e2:[61,40],w2:[65,30]}),SQ],
+  steps:["Hold one dumbbell upright against your chest, elbows tucked.","Stand with feet shoulder width apart, toes turned out slightly.","Sit down between your heels with your chest up until your thighs pass parallel.","Push through your whole foot to stand tall."],
+  tip:"Let your elbows track inside your knees at the bottom."},
+ pushup:{name:"Push-Up",muscles:"Chest, shoulders, triceps",equip:"None",gear:"",
+  poses:[PLANK,PDOWN],
+  steps:["Place your hands under your shoulders, body in one straight line from head to heels.","Brace your core and squeeze your glutes.","Lower until your chest is a fist above the floor, elbows about 45 degrees from your body.","Press the floor away to return to the top."],
+  tip:"Drop to your knees to finish the set with clean form."},
+ curl:{name:"Bicep Curl",muscles:"Biceps, forearms",equip:"Dumbbells",gear:"db2",
+  poses:[ST,CURL],
+  steps:["Stand tall with dumbbells at your sides, palms facing forward.","Pin your elbows to your ribs.","Curl the weights up to shoulder height without swinging.","Lower slowly, taking about 2 seconds."],
+  tip:"If you need to swing, the weight is too heavy."},
+ pressdown:{name:"Triceps Pressdown",muscles:"Triceps",equip:"Cable with rope or bar, or a resistance band",gear:"cable",
+  poses:[pose(ST,{h:[61,14],n:[60,25],e1:[60,39],w1:[70,36],e2:[58,39],w2:[68,36]}),pose(ST,{h:[61,14],n:[60,25],e1:[60,39],w1:[64,54],e2:[58,39],w2:[62,54]})],
+  steps:["Face the cable and grip the attachment, elbows tucked at your sides.","Lean forward slightly and brace your core.","Press down until your arms are fully straight.","Let the handle rise back to chest height while your elbows stay still."],
+  tip:"Training at home? Anchor a band high on a door."},
+ row:{name:"Dumbbell Row",muscles:"Upper back, lats, rear shoulders",equip:"Dumbbells",gear:"db2",
+  poses:[HB,pose(HB,{e1:[64,38],w1:[66,54],e2:[62,38],w2:[64,54]})],
+  steps:["Hinge at the hips with a flat back, dumbbells hanging under your shoulders.","Pull the weights toward your hips, driving your elbows back.","Squeeze your shoulder blades together at the top.","Lower with control until your arms are straight."],
+  tip:"Keep your neck in line with your spine and your eyes on the floor ahead."},
+ lunge:{name:"Lunge",muscles:"Quads, glutes, hamstrings",equip:"None, dumbbells optional",gear:"",
+  poses:[ST,LUNGE],
+  steps:["Stand tall with feet hip width apart.","Step forward and lower until both knees bend to about 90 degrees.","Keep your front knee over your ankle and your torso upright.","Push off the front foot to return, then switch legs."],
+  tip:"Reps are per leg, so finish every rep on both sides."},
+ dips:{name:"Bar Dip",muscles:"Chest, triceps, front shoulders",equip:"Parallel dip bars",gear:"dips",
+  poses:[[60,14,60,25,59,54,53,68,61,80,52,68,60,80,60,37,61,48,59,37,59,48],[64,30,62,40,57,68,51,82,59,90,50,82,58,90,45,35,61,48,44,36,59,48]],
+  steps:["Support yourself on the bars with straight arms.","Lean slightly forward and lower until your upper arms are about parallel to the floor.","Keep your shoulders down, away from your ears.","Press back up to straight arms."],
+  tip:"Use a band or do bench dips if full dips are too hard for now."},
+ pushpress:{name:"Push Press",muscles:"Shoulders, triceps, legs",equip:"Dumbbells",gear:"db2",
+  poses:[pose(ST,{e1:[67,36],w1:[66,24],e2:[65,36],w2:[64,24]}),[60,20,60,31,59,60,66,76,60,93,64,76,58,93,67,43,66,31,65,43,64,31],PRESS],
+  steps:["Hold the dumbbells at shoulder height, palms facing in.","Dip a few inches by bending your knees, torso upright.","Drive up through your legs and press the weights overhead.","Lower back to your shoulders with control."],
+  tip:"Your legs start the press and your arms finish it."},
+ lateral:{name:"Lateral Raise",muscles:"Side shoulders",equip:"Light dumbbells",gear:"db2",
+  poses:[FRONT,pose(FRONT,{e1:[46,27],w1:[33,26],e2:[74,27],w2:[87,26]})],
+  steps:["Stand tall with dumbbells at your sides and a slight bend in your elbows.","Raise your arms out to the sides up to shoulder height.","Pause for a moment at the top.","Lower slowly over 2 to 3 seconds."],
+  tip:"Go light. This move is about control, not load."},
+ jumpsquat:{name:"Jump Squat",muscles:"Quads, glutes, calves",equip:"None",gear:"",
+  poses:[ST,pose(SQ,{e1:[70,54],w1:[80,50],e2:[68,54],w2:[78,50]}),JUMP],
+  steps:["Stand with feet shoulder width apart and lower into a squat.","Swing your arms and jump explosively.","Land softly on the balls of your feet with bent knees.","Flow straight into the next squat."],
+  tip:"Switch to regular squats if your knees need a break."},
+ revlunge:{name:"Reverse Lunge",muscles:"Glutes, quads, hamstrings",equip:"None",gear:"",
+  poses:[ST,LUNGE],
+  steps:["Stand tall, then step one foot straight back.","Lower until your back knee nearly touches the floor.","Keep your weight in your front heel.","Drive through the front foot to stand, then alternate legs."],
+  tip:"Stepping back is easier on the knees than stepping forward."},
+ plank:{name:"High Plank",muscles:"Core, shoulders",equip:"None",gear:"",
+  poses:[PLANK,pose(PLANK,{p:[50,76],k1:[34,84],k2:[34,84]})],
+  steps:["Place your hands under your shoulders with straight arms.","Make one straight line from head to heels.","Brace your abs and squeeze your glutes.","Breathe steadily and hold for the full time."],
+  tip:"Do not let your hips sag or pike up."},
+ squatcurlpress:{name:"Squat, Curl and Press",muscles:"Legs, biceps, shoulders",equip:"Dumbbells",gear:"db2",
+  poses:[pose(SQ,{e1:[62,60],w1:[64,72],e2:[60,60],w2:[62,72]}),ST,CURL,PRESS],
+  steps:["Hold dumbbells at your sides and squat down.","Stand up, then curl the weights to your shoulders.","Press the dumbbells overhead until your arms are straight.","Lower them to your sides and start the next rep."],
+  tip:"Pick a weight you can press overhead; the press is the weak link."},
+ kbpull:{name:"Kettlebell High Pull",muscles:"Upper back, shoulders, glutes, hamstrings",equip:"Kettlebell or one dumbbell",gear:"kb",
+  poses:[[80,40,72,46,50,56,58,72,54,93,56,72,52,93,70,60,67,74,68,60,65,74],pose(ST,{e1:[50,24],w1:[64,28],e2:[48,24],w2:[62,28]})],
+  steps:["Hold the kettlebell with both hands between your feet, hips hinged back.","Drive your hips forward explosively.","Let that momentum lift the bell as you pull your elbows high and wide.","Lower back down and hinge into the next rep."],
+  tip:"The power comes from your hips, not your arms."},
+ sideplank:{name:"Side Plank",muscles:"Obliques, core, shoulders",equip:"None",gear:"",
+  poses:[SIDEPL,pose(SIDEPL,{p:[52,72],k1:[34,82],k2:[34,80],e2:[70,69],w2:[56,72]})],
+  steps:["Lie on your side with your elbow under your shoulder.","Stack your feet and lift your hips off the floor.","Hold a straight line from head to feet.","Switch sides at the halfway beep."],
+  tip:"Drop your bottom knee to the floor for an easier version."},
+ deadlift:{name:"Dumbbell Deadlift",muscles:"Hamstrings, glutes, lower back",equip:"Dumbbells",gear:"db2",
+  poses:[[86,42,76,46,50,52,58,72,54,93,56,72,52,93,76,62,76,76,74,62,74,76],pose(ST,{w1:[62,54],w2:[60,54]})],
+  steps:["Stand with the dumbbells in front of your thighs.","Push your hips back with soft knees, sliding the weights down your legs.","Stop when you feel a stretch in your hamstrings, back flat.","Drive your hips forward to stand tall."],
+  tip:"Keep the dumbbells close to your legs the whole time."},
+ vups:{name:"V-Up",muscles:"Abs, hip flexors",equip:"None",gear:"",
+  poses:[[16,86,26,88,56,88,76,88,96,88,76,88,96,88,14,86,2,86,14,88,2,88],[36,56,40,66,56,88,70,70,84,52,70,70,84,52,56,58,72,50,54,58,70,50]],
+  steps:["Lie flat with your arms overhead and legs straight.","Lift your legs and torso at the same time.","Reach your hands toward your toes, balancing on your hips.","Lower back down slowly."],
+  tip:"Bend your knees into tuck ups to make it easier."},
+ superman:{name:"Superman",muscles:"Lower back, glutes, upper back",equip:"None",gear:"",
+  poses:[[96,84,86,88,56,88,36,88,16,88,36,88,16,88,98,90,110,90,98,90,110,90],[98,77,86,84,56,88,36,84,18,79,36,84,18,79,100,80,112,74,100,80,112,74]],
+  steps:["Lie face down with your arms straight out in front.","Lift your arms, chest and legs a few inches off the floor.","Hold for 1 to 2 seconds, squeezing your back and glutes.","Lower with control and repeat."],
+  tip:"Keep your neck neutral with your eyes toward the floor."},
+ thruster:{name:"Dumbbell Thruster",muscles:"Legs, shoulders, triceps",equip:"Dumbbells",gear:"db2",
+  poses:[pose(SQ,{e1:[70,52],w1:[68,42],e2:[68,52],w2:[66,42]}),PRESS],
+  steps:["Hold the dumbbells at your shoulders.","Squat down until your thighs reach parallel.","Drive up and use that momentum to press the weights overhead.","Bring the dumbbells back to your shoulders as you sink into the next squat."],
+  tip:"Make it one smooth motion, no pause at the top of the squat."},
+ renegade:{name:"Renegade Row with Push-Up",muscles:"Back, chest, core",equip:"Dumbbells",gear:"db2",
+  poses:[PLANK,PDOWN,PLANK,pose(PLANK,{e1:[70,66],w1:[78,78]})],
+  steps:["Get into a high plank with your hands on the dumbbells, feet wide.","Do one push-up.","Row one dumbbell to your hip, then the other.","Keep your hips square to the floor the whole time."],
+  tip:"Wider feet make it easier to stay stable."},
+ lungecurl:{name:"Lunge to Bicep Curl",muscles:"Legs, biceps",equip:"Dumbbells",gear:"db2",
+  poses:[ST,LUNGE,pose(LUNGE,{w1:[67,45],w2:[65,45]}),LUNGE],
+  steps:["Hold the dumbbells at your sides.","Step into a lunge.","At the bottom, curl the dumbbells to your shoulders and lower them.","Stand up and repeat. Switch legs at the halfway beep."],
+  tip:"Keep your torso tall during the curl."},
+ bridgepress:{name:"Hip Bridge with Chest Press",muscles:"Glutes, chest, triceps",equip:"Dumbbells",gear:"db2",
+  poses:[LIEB,pose(LIEB,{p:[56,72],k1:[72,66],k2:[70,66],e1:[34,74],w1:[34,58],e2:[32,74],w2:[32,58]})],
+  steps:["Lie on your back with knees bent, feet flat, dumbbells at your chest.","Lift your hips into a bridge and hold them up.","Press the dumbbells straight up over your chest.","Lower the weights while your hips stay up, then repeat."],
+  tip:"Squeeze your glutes hard to keep the hips level."},
+ sldl:{name:"Single Leg Deadlift",muscles:"Hamstrings, glutes, balance",equip:"One or two dumbbells",gear:"db2",
+  poses:[pose(ST,{k2:[62,70],f2:[56,86]}),[90,44,80,46,52,52,56,72,54,93,36,51,18,50,80,60,80,74,78,60,78,74]],
+  steps:["Stand on one leg with a soft knee.","Hinge forward while your free leg reaches straight back.","Lower until your torso is close to parallel with the floor.","Return to standing with control. Switch legs at the halfway beep."],
+  tip:"Keep your hips level and pointing at the floor."},
+ kickback:{name:"Tricep Kickback",muscles:"Triceps",equip:"Dumbbells",gear:"db2",
+  poses:[[86,34,78,40,50,54,54,72,52,93,52,72,50,93,64,46,66,60,62,46,64,60],[86,34,78,40,50,54,54,72,52,93,52,72,50,93,64,46,50,52,62,46,48,52]],
+  steps:["Hinge forward with a flat back.","Lift your upper arm in line with your torso, elbow bent at 90 degrees.","Straighten your arm behind you and squeeze the triceps.","Bend back to 90 degrees. Only the forearm moves. Switch arms at the halfway beep."],
+  tip:"Keep the upper arm still; a lighter weight works better."},
+ latlunge:{name:"Lateral Lunge",muscles:"Inner thighs, glutes, quads",equip:"None",gear:"",
+  poses:[pose(FRONT,{e1:[54,40],w1:[60,34],e2:[66,40],w2:[60,34]}),[72,27,71,38,66,64,82,74,86,93,52,78,38,93,63,50,69,44,79,50,73,44]],
+  steps:["Stand with your feet together.","Take a big step out to the side.","Sit your hips back and bend the stepping knee, other leg straight.","Push back to the start. Switch sides at the halfway beep."],
+  tip:"Keep both feet flat and pointing forward."},
+ lcrunch:{name:"Dumbbell L-Crunch",muscles:"Abs",equip:"One dumbbell",gear:"db1",
+  poses:[[18,86,28,88,56,88,58,68,60,48,57,68,59,48,30,76,34,64,29,76,33,64],[26,76,34,81,56,88,58,68,60,48,57,68,59,48,44,66,54,54,43,66,53,54]],
+  steps:["Lie on your back with your legs straight up toward the ceiling.","Hold one dumbbell with both hands above your chest.","Crunch up, reaching the dumbbell toward your feet.","Lower your shoulders slowly and repeat."],
+  tip:"Press your lower back into the floor throughout."},
+ burpee:{name:"Burpee",muscles:"Full body, conditioning",equip:"None",gear:"",
+  poses:[ST,SQHANDS,PLANK,SQHANDS,[60,4,60,15,59,44,60,64,58,84,58,64,56,84,62,4,64,-6,58,4,60,-6]],
+  steps:["From standing, squat down and place your hands on the floor.","Jump or step your feet back into a plank.","Jump your feet back in toward your hands.","Explode up into a jump with your arms overhead."],
+  tip:"Step back instead of jumping to keep moving for the full minute."}
+};
+
+/* ---------- Beginner at-home exercises ---------- */
+var LIEF=[18,86,28,88,56,88,70,70,80,93,68,70,78,93,40,92,52,92,38,92,50,92];
+var TABLE=[86,56,78,60,50,62,50,90,32,92,50,90,32,92,78,76,78,92,76,76,76,92];
+var WALKA=[60,13,60,24,60,53,65,73,68,93,56,73,50,93,57,38,53,50,63,38,67,50];
+var WALKB=[60,13,60,24,60,53,56,73,50,93,65,73,68,93,63,38,67,50,57,38,53,50];
+var WFA=[60,14,61,25,60,53,68,72,74,92,55,73,46,92,54,37,48,46,67,37,73,29];
+var WFB=[60,14,61,25,60,53,55,73,46,92,68,72,74,92,67,37,73,29,54,37,48,46];
+var RT=[40,54,44,64,54,88,72,72,86,84,70,72,84,82,52,72,60,66,50,72,58,66];
+var DB0=[18,86,28,88,56,88,58,68,74,68,58,68,74,68,29,76,29,62,27,76,27,62];
+var HKA=pose(ST,{h:[60,11],n:[60,22],p:[60,51],k1:[77,48],f1:[73,66],e1:[54,35],w1:[50,47],e2:[67,35],w2:[72,25]});
+var HKB=pose(ST,{h:[60,11],n:[60,22],p:[60,51],k2:[77,48],f2:[73,66],e2:[54,35],w2:[50,47],e1:[67,35],w1:[72,25]});
+var ACW1=[[34,22],[38,26],[34,30],[30,26]],ACW2=[[86,22],[82,26],[86,30],[90,26]];
+EX.glutebridge={name:"Glute Bridge",muscles:"Glutes, hamstrings, core",equip:"Mat",gear:"",
+ poses:[LIEF,pose(LIEF,{p:[52,74],k1:[72,66],k2:[70,66]})],
+ steps:["Lie on your back with knees bent and feet flat, hip width apart.","Rest your arms by your sides, palms down.","Squeeze your glutes and lift your hips until your body forms a line from shoulders to knees.","Hold for a second at the top, then lower slowly."],
+ tip:"Push through your heels, not your toes."};
+EX.bwsquat={name:"Squat",muscles:"Quads, glutes, core",equip:"None",gear:"",
+ poses:[ST,pose(SQ,{e1:[72,52],w1:[84,50],e2:[70,52],w2:[82,50]})],
+ steps:["Stand with feet shoulder width apart, toes turned out slightly.","Reach your arms forward for balance.","Sit your hips back and down as if onto a chair, chest up.","Press through your heels to stand tall."],
+ tip:"Squat to a chair behind you until you feel confident."};
+EX.donkeykick={name:"Donkey Kick",muscles:"Glutes",equip:"Mat",gear:"",
+ poses:[TABLE,pose(TABLE,{k1:[32,60],f1:[30,42]})],
+ steps:["Start on hands and knees, hands under shoulders and knees under hips.","Keep one knee bent at 90 degrees.","Press that foot up toward the ceiling until your thigh is level with your back.","Lower with control. Finish all reps, then switch legs."],
+ tip:"Keep your lower back flat; do not arch to lift higher."};
+EX.firehydrant={name:"Fire Hydrant",muscles:"Outer glutes, hips",equip:"Mat",gear:"",
+ poses:[TABLE,pose(TABLE,{k1:[46,68],f1:[30,72]})],
+ steps:["Start on hands and knees with a flat back.","Keeping the knee bent, lift one leg out to the side.","Raise it until your thigh is about level with your hip.","Lower slowly. Finish all reps, then switch sides."],
+ tip:"Keep your hips square; only the working leg moves."};
+EX.briskwalk={name:"Brisk Walk",muscles:"Heart, legs",equip:"Comfortable shoes",gear:"",
+ poses:[WALKA,WALKB],
+ steps:["Walk at a pace where you can talk but not sing.","Stand tall with your eyes forward and shoulders relaxed.","Swing your arms naturally from the shoulders.","Land on your heel and roll through to your toes."],
+ tip:"No space outside? March briskly in place or around your home."};
+EX.dance={name:"Dance Workout",muscles:"Heart, full body",equip:"Music you love",gear:"",
+ poses:[pose(FRONT,{e1:[49,30],w1:[46,17],e2:[70,40],w2:[76,50],k1:[52,72],f1:[48,93]}),pose(FRONT,{h:[63,13],n:[62,24],p:[61,53],e2:[73,30],w2:[76,17],e1:[52,40],w1:[45,50],k2:[69,72],f2:[73,93]})],
+ steps:["Put on upbeat music.","Start with simple steps, like a step touch side to side.","Add arm moves once your feet feel comfortable.","Keep moving the whole time and stay light on your feet."],
+ tip:"Follow any beginner dance video if you want guidance."};
+EX.intervalwalk={name:"Interval Walk",muscles:"Heart, legs",equip:"Comfortable shoes",gear:"",
+ poses:[WFA,WFB],
+ steps:["Start walking at an easy pace.","Alternate 1 minute easy with 1 minute as fast as you can walk.","On fast minutes, take quicker steps and pump your arms.","The timer beeps and tells you when to change pace."],
+ tip:"Fast should feel hard to talk through; easy should let you catch your breath."};
+EX.wallpushup={name:"Wall Push-Up",muscles:"Chest, shoulders, triceps",equip:"A clear wall",gear:"wall",
+ poses:[[76,22,71,32,58,58,49,75,40,93,49,75,40,93,84,35,97,34,84,35,97,34],[86,27,80,36,63,60,52,77,40,93,52,77,40,93,86,46,97,34,86,46,97,34]],
+ steps:["Stand an arm's length from a wall with your hands on it at shoulder height.","Step your feet back slightly so your body leans in one straight line.","Bend your elbows and bring your chest toward the wall.","Push back to straight arms."],
+ tip:"Step farther from the wall to make it harder."};
+EX.chairdip={name:"Chair Tricep Dip",muscles:"Triceps, shoulders",equip:"A sturdy chair",gear:"chair",
+ poses:[[51,21,48,32,50,61,68,70,74,93,67,70,73,93,48,46,47,60,48,46,47,60],[53,35,50,46,51,75,69,80,75,93,68,80,74,93,38,50,47,60,38,50,47,60]],
+ steps:["Sit on the edge of a sturdy chair with your hands gripping the edge beside your hips.","Slide your hips forward off the seat, knees bent and feet flat.","Bend your elbows straight back to lower your hips toward the floor.","Press through your palms to straighten your arms."],
+ tip:"Push the chair against a wall so it cannot slide."};
+EX.armcircles={name:"Arm Circles",muscles:"Shoulders, upper back",equip:"None",gear:"",
+ poses:[0,1,2,3].map(function(i){return pose(FRONT,{e1:[47,25],w1:ACW1[i],e2:[73,25],w2:ACW2[i]})}),
+ steps:["Stand tall with feet hip width apart.","Raise your arms straight out to the sides at shoulder height.","Make small circles forward, keeping your arms straight.","Reverse direction at the halfway beep."],
+ tip:"Make the circles bigger to make it harder."};
+EX.shouldertaps={name:"Plank Shoulder Tap",muscles:"Core, shoulders",equip:"Mat",gear:"",
+ poses:[PLANK,pose(PLANK,{e1:[74,80],w1:[80,72]}),PLANK,pose(PLANK,{e2:[74,80],w2:[80,72]})],
+ steps:["Start in a high plank, hands under shoulders and feet wide.","Lift one hand and tap the opposite shoulder.","Place it back down and tap with the other hand.","Keep your hips as still as possible."],
+ tip:"Drop to your knees for more stability."};
+EX.russiantwist={name:"Russian Twist",muscles:"Obliques, abs",equip:"Mat",gear:"",
+ poses:[RT,pose(RT,{e1:[50,76],w1:[44,86],e2:[48,76],w2:[42,86]})],
+ steps:["Sit with knees bent and heels down, leaning back slightly with a straight back.","Clasp your hands in front of your chest.","Rotate your torso to bring your hands beside one hip, then the other.","Each side counts as one rep."],
+ tip:"Lift your feet off the floor once this feels easy."};
+EX.kneeelbow={name:"Knee to Elbow",muscles:"Obliques, abs, hip flexors",equip:"None",gear:"",
+ poses:[pose(ST,{e1:[70,22],w1:[63,14],e2:[50,22],w2:[57,14]}),[65,17,62,28,60,53,78,50,74,68,59,73,58,93,70,40,63,24,50,22,57,14]],
+ steps:["Stand tall with your hands lightly behind your head.","Lift one knee up and across your body.","Bring the opposite elbow down to meet it, crunching your side.","Return and switch sides each rep."],
+ tip:"Move with control rather than speed."};
+EX.mountainclimber={name:"Mountain Climbers",muscles:"Core, shoulders, heart",equip:"Mat",gear:"",
+ poses:[pose(PLANK,{k1:[64,78],f1:[52,90]}),pose(PLANK,{k2:[64,78],f2:[52,90]})],
+ steps:["Start in a high plank with your hands under your shoulders.","Drive one knee toward your chest.","Switch legs quickly, like running in place.","Keep your hips level and your core tight."],
+ tip:"Step instead of hop if you need to slow down."};
+EX.deadbug={name:"Dead Bug",muscles:"Deep core, abs",equip:"Mat",gear:"",
+ poses:[DB0,pose(DB0,{e1:[17,82],w1:[5,84],k2:[74,82],f2:[92,86]}),DB0,pose(DB0,{e2:[17,82],w2:[5,84],k1:[74,82],f1:[92,86]})],
+ steps:["Lie on your back with arms pointing up and knees bent at 90 degrees over your hips.","Press your lower back gently into the floor.","Slowly lower one arm overhead and straighten the opposite leg.","Return to the start and switch sides."],
+ tip:"Only lower as far as you can keep your back flat."};
+EX.highknee={name:"High Knees",muscles:"Heart, hip flexors, core",equip:"None",gear:"",
+ poses:[HKA,HKB],
+ steps:["Stand tall with feet hip width apart.","Run in place, driving your knees up toward hip height.","Pump your arms in rhythm with your legs.","Land softly on the balls of your feet."],
+ tip:"March with high knees for a low impact version."};
+
+/* ---------- 7-Day Home Workout exercises ---------- */
+function mirror(p){var a=p.slice();for(var i=0;i<a.length;i+=2)a[i]=120-a[i];return a;}
+function lift(p,dy,keep){var a=p.slice();for(var j in J){if(keep.indexOf(j)>=0)continue;a[J[j]*2+1]+=dy;}return a;}
+var PIKE=[76,74,70,66,50,46,38,69,26,92,38,69,26,92,75,79,80,92,73,79,78,92];
+var SMUP=[98,77,86,84,56,88,36,84,18,79,36,84,18,79,100,80,112,74,100,80,112,74];
+var BIKE1=[18,80,26,84,56,88,50,70,66,66,74,82,92,80,30,72,18,76,22,76,16,78];
+var LR0=[18,86,28,88,56,88,76,88,96,88,76,88,96,88,40,92,52,92,38,92,50,92];
+var HT0=[22,64,30,70,46,86,64,72,70,93,62,72,68,93,36,80,44,84,34,80,42,84];
+var FPL=[92,76,82,80,50,84,34,88,18,92,34,88,18,92,82,92,94,92,80,92,92,92];
+var JJ0=pose(FRONT,{k1:[57,73],f1:[57,93],k2:[63,73],f2:[63,93]});
+var SK1=[50,18,52,29,54,56,48,74,44,93,62,74,54,84,44,40,40,52,60,36,66,28];
+var W2P=[60,15,60,26,60,56,46,72,40,93,72,74,82,92,47,26,34,26,73,26,86,26];
+var TREE=[60,13,60,24,60,53,46,64,58,72,61,73,61,93,54,12,60,2,66,12,60,2];
+var STR1=pose(FRONT,{h:[51,15],n:[55,25],e2:[58,11],w2:[50,2],e1:[50,38],w1:[52,52]});
+var FR0=[26,58,30,67,48,84,68,84,88,87,68,84,88,87,26,78,22,90,26,78,22,90];
+var BR0=[60,40,60,51,60,78,44,84,62,88,76,84,58,88,50,64,45,80,70,64,75,80];
+var SQH=pose(SQ,{e1:[72,52],w1:[84,50],e2:[70,52],w2:[82,50]});
+EX.pikepushup={name:"Pike Push-Up",muscles:"Shoulders, triceps, upper chest",equip:"None",gear:"",
+ poses:[PIKE,pose(PIKE,{h:[84,84],n:[77,76],p:[54,50],e1:[70,84],e2:[68,84]})],
+ steps:["Start in a push-up position, then walk your feet in and lift your hips into an upside down V.","Keep your arms straight and your head between your arms.","Bend your elbows to lower the top of your head toward the floor in front of your hands.","Press back up to straight arms."],
+ tip:"Raise your feet on a step to make it harder; widen your stance to make it easier."};
+EX.supermanpull={name:"Superman Pull",muscles:"Upper back, lats, lower back",equip:"Mat",gear:"",
+ poses:[SMUP,pose(SMUP,{e1:[80,77],w1:[90,72],e2:[80,77],w2:[90,72]})],
+ steps:["Lie face down with your arms straight out in front.","Lift your chest, arms and legs off the floor.","Pull your elbows down toward your ribs as if doing a pull-up, squeezing your shoulder blades.","Reach your arms forward again while staying lifted, then repeat."],
+ tip:"Keep your neck long and look at the floor."};
+EX.calfraise={name:"Calf Raise",muscles:"Calves",equip:"None, a step is optional",gear:"",
+ poses:[ST,lift(ST,-5,["f1","f2"])],
+ steps:["Stand tall with feet hip width apart, near a wall for balance.","Push through the balls of your feet to rise as high as you can.","Pause for a second at the top.","Lower your heels slowly to the floor."],
+ tip:"Stand on the edge of a step to get a bigger stretch at the bottom."};
+EX.wallsit={name:"Wall Sit",muscles:"Quads, glutes",equip:"A clear wall",gear:"wall",
+ poses:[[94,29,94,40,94,68,72,68,72,93,72,68,72,93,88,54,78,64,88,54,78,64]],
+ steps:["Stand with your back against a wall and feet about two feet in front of you.","Slide down until your knees are bent to about 90 degrees.","Keep your back flat against the wall and knees over your ankles.","Hold for the full time, then slide back up."],
+ tip:"Stay higher on the wall if 90 degrees is too hard for now."};
+EX.bicycle={name:"Bicycle Crunch",muscles:"Abs, obliques",equip:"Mat",gear:"",
+ poses:[BIKE1,pose(BIKE1,{k1:[74,82],f1:[92,80],k2:[50,70],f2:[66,66]})],
+ steps:["Lie on your back with hands lightly behind your head and shoulders off the floor.","Bring one knee in while extending the other leg.","Rotate to bring the opposite elbow toward the bent knee.","Switch sides in a smooth pedaling motion."],
+ tip:"Move slowly and rotate from your ribs, not your neck."};
+EX.legraise={name:"Leg Raise",muscles:"Lower abs, hip flexors",equip:"Mat",gear:"",
+ poses:[LR0,pose(LR0,{k1:[60,68],f1:[64,48],k2:[60,68],f2:[64,48]})],
+ steps:["Lie on your back with legs straight and hands by your sides or under your hips.","Press your lower back into the floor.","Lift your legs together until they point at the ceiling.","Lower them slowly, stopping just before they touch the floor."],
+ tip:"Bend your knees slightly if your lower back lifts off the floor."};
+EX.fplank={name:"Plank",muscles:"Core, shoulders",equip:"Mat",gear:"",
+ poses:[FPL,pose(FPL,{p:[50,83]})],
+ steps:["Rest on your forearms with elbows under your shoulders.","Step your feet back so your body forms one straight line.","Brace your abs and squeeze your glutes.","Breathe steadily and hold for the full time."],
+ tip:"Drop to your knees if your hips start to sag."};
+EX.hipthrust={name:"Hip Thrust",muscles:"Glutes, hamstrings",equip:"Bench, couch or sturdy chair",gear:"bench",
+ poses:[HT0,pose(HT0,{p:[52,70],k1:[68,70],k2:[66,70],e1:[40,72],w1:[50,70],e2:[38,72],w2:[48,70]})],
+ steps:["Sit on the floor with your upper back against the edge of a bench, knees bent and feet flat.","Tuck your chin slightly and brace your core.","Drive through your heels to lift your hips until your body is flat from shoulders to knees.","Squeeze your glutes at the top, then lower with control."],
+ tip:"Your shins should be vertical at the top; move your feet if they are not."};
+EX.bulgarian={name:"Bulgarian Split Squat",muscles:"Quads, glutes",equip:"Bench or sturdy chair",gear:"bench",
+ poses:[[61,19,60,30,60,58,70,74,74,93,48,72,30,72,60,44,61,56,60,44,61,56],[60,31,59,42,58,70,76,78,76,93,44,88,30,72,59,56,60,68,59,56,60,68]],
+ steps:["Stand a stride in front of a bench and rest the top of your back foot on it.","Keep your chest up and your weight on the front foot.","Lower until your front thigh is about parallel with the floor.","Push through the front heel to stand. Finish all reps, then switch legs."],
+ tip:"Hold a wall or chair for balance while you learn the move."};
+EX.stepup={name:"Step-Up",muscles:"Quads, glutes",equip:"Step or sturdy box",gear:"box",
+ poses:[[56,15,56,26,56,54,68,66,74,80,55,74,52,93,58,40,58,52,54,40,54,52],[74,1,74,12,74,40,76,60,74,80,82,58,78,76,75,26,75,38,73,26,73,38]],
+ steps:["Stand facing a sturdy step and place one whole foot on it.","Press through that heel to step up until your leg is straight.","Bring the other knee up, then step back down with control.","Finish all reps on one leg, then switch."],
+ tip:"Use a lower step if your knee travels far past your toes."};
+EX.squathold={name:"Squat Hold",muscles:"Quads, glutes, core",equip:"None",gear:"",
+ poses:[SQH],
+ steps:["Stand with feet shoulder width apart.","Sit down into a squat until your thighs are about parallel to the floor.","Reach your arms forward and keep your chest up.","Hold still for the full time, breathing steadily."],
+ tip:"Hold a little higher if you cannot keep your heels down."};
+EX.jumpingjack={name:"Jumping Jacks",muscles:"Heart, legs, shoulders",equip:"None",gear:"",
+ poses:[JJ0,pose(FRONT,{h:[60,10],n:[60,21],p:[60,50],k1:[50,70],f1:[42,90],k2:[70,70],f2:[78,90],e1:[48,14],w1:[42,2],e2:[72,14],w2:[78,2]})],
+ steps:["Stand with feet together and arms by your sides.","Jump your feet out wide while raising your arms overhead.","Jump back to the start.","Keep a steady rhythm and land softly."],
+ tip:"Step one foot out at a time for a low impact version."};
+EX.skater={name:"Skater Jumps",muscles:"Glutes, legs, heart",equip:"None",gear:"",
+ poses:[SK1,mirror(SK1)],
+ steps:["Stand on one leg with a slight bend in the knee.","Leap sideways and land softly on the other foot.","Swing the free leg behind you and reach your arms across.","Leap back to the other side. The timer tells you when to switch focus."],
+ tip:"Make the hops smaller to keep good balance."};
+EX.plankjack={name:"Plank Jacks",muscles:"Core, shoulders, heart",equip:"Mat",gear:"",
+ poses:[PLANK,pose(PLANK,{k1:[36,83],f1:[22,88],k2:[32,87],f2:[14,93]})],
+ steps:["Start in a high plank with feet together.","Jump your feet out wide, keeping your hips level.","Jump them back together.","Keep your shoulders over your hands the whole time."],
+ tip:"Step one foot out at a time to make it easier."};
+EX.yoga={name:"Yoga",muscles:"Mobility, balance, full body",equip:"Mat",gear:"",
+ poses:[W2P,TREE],
+ steps:["Flow through gentle poses such as warrior and tree pose.","Hold each pose for 3 to 5 slow breaths.","Move between poses with control.","Follow a beginner yoga video if you want guidance."],
+ tip:"Comfort over depth. Never force a stretch."};
+EX.stretching={name:"Stretching",muscles:"Full body mobility",equip:"Mat",gear:"",
+ poses:[STR1,mirror(STR1)],
+ steps:["Stretch your main muscle groups: hamstrings, quads, hips, chest, back and shoulders.","Hold each stretch for 20 to 30 seconds.","Breathe slowly and relax into each stretch.","Stretch both sides evenly."],
+ tip:"Mild tension is right; pain means ease off."};
+EX.foamroll={name:"Foam Rolling",muscles:"Muscle recovery",equip:"Foam roller (optional)",gear:"roller",
+ poses:[FR0,pose(FR0,{h:[34,58],n:[38,67],p:[56,84],k1:[76,84],f1:[96,87],k2:[76,84],f2:[96,87],e1:[30,78],e2:[30,78]})],
+ steps:["Place the roller under the muscle you want to work, such as calves, thighs or upper back.","Support your weight with your hands and roll slowly.","Pause on tight spots for 20 to 30 seconds.","Avoid rolling directly over joints or your lower back."],
+ tip:"No roller? Gentle stretching works too."};
+EX.breathing={name:"Deep Breathing",muscles:"Recovery, relaxation",equip:"None",gear:"",
+ poses:[BR0,pose(BR0,{h:[60,37],n:[60,48],e1:[50,61],e2:[70,61]})],
+ steps:["Sit comfortably with a tall spine and hands on your knees.","Breathe in slowly through your nose for 4 counts.","Breathe out slowly through your mouth for 6 counts.","Repeat, letting your shoulders relax."],
+ tip:"Close your eyes if that helps you focus."};
+EX.lightwalk={name:"Light Walk",muscles:"Heart, legs, recovery",equip:"Comfortable shoes",gear:"",
+ poses:[WALKA,WALKB],
+ steps:["Walk at a relaxed, easy pace.","Keep your posture tall and shoulders loose.","Breathe easily; you should be able to chat.","Enjoy being outside if you can."],
+ tip:"This is recovery, so keep it easy."};
+
+/* ---------- Workout library (add new workouts here) ---------- */
+var DAY_A=[{ex:"pullup",target:"8-12 reps"},{ex:"goblet",target:"12-15 reps"},{ex:"pushup",target:"15-20 reps"},{ex:"curl",target:"12-15 reps"},{ex:"pressdown",target:"10-15 reps"}];
+var DAY_B=[{ex:"row",target:"10-12 reps"},{ex:"lunge",target:"12-15 reps per leg"},{ex:"dips",target:"12-15 reps"},{ex:"pushpress",target:"10-15 reps"},{ex:"lateral",target:"10-15 reps"}];
+var WORKOUTS=[
+ {id:"amrap30",name:"AMRAP 30 Muscle Building",plate:"red",mode:"amrap",minutes:30,format:"AMRAP",
+  blurb:"Four training days. Work through the list, then start again. Count every full round in 30 minutes.",
+  equipment:["Pull-up bar","Dumbbells","Dip bars","Cable or band"],source:"thefitnessphantom.com",
+  sections:[
+   {id:"mon",title:"Monday",short:"Mon",day:1,label:"Day A: pull, squat, push, arms",minutes:30,rest:[60,90],items:DAY_A},
+   {id:"tue",title:"Tuesday",short:"Tue",day:2,label:"Day B: row, lunge, dip, shoulders",minutes:30,rest:[60],items:DAY_B},
+   {id:"thu",title:"Thursday",short:"Thu",day:4,label:"Day A: pull, squat, push, arms",minutes:30,rest:[60,90],items:DAY_A},
+   {id:"sat",title:"Saturday",short:"Sat",day:6,label:"Day B: row, lunge, dip, shoulders",minutes:30,rest:[60],items:DAY_B}
+  ]},
+ {id:"fullbody30",name:"Full Body Strength 30",plate:"blue",mode:"circuits",minutes:30,format:"Circuits",
+  blurb:"Three circuits of four moves. 60 seconds each, 60 seconds rest, 2 rounds per circuit.",
+  equipment:["Dumbbells","Kettlebell or dumbbell","Mat"],source:"runningonrealfood.com",
+  sections:[
+   {id:"c1",title:"Circuit 1",short:"C1",label:"Legs, push, core",work:60,rest:60,rounds:2,items:[{ex:"jumpsquat",seconds:60},{ex:"pushup",seconds:60},{ex:"revlunge",seconds:60},{ex:"plank",seconds:60}]},
+   {id:"c2",title:"Circuit 2",short:"C2",label:"Total body, pull, obliques",work:60,rest:60,rounds:2,items:[{ex:"squatcurlpress",seconds:60},{ex:"row",seconds:60},{ex:"kbpull",seconds:60},{ex:"sideplank",seconds:60,switchAt:30,note:"30 sec each side"}]},
+   {id:"c3",title:"Circuit 3",short:"C3",label:"Hinge, press, abs, back",work:60,rest:60,rounds:2,items:[{ex:"deadlift",seconds:60},{ex:"pushpress",seconds:60},{ex:"vups",seconds:60},{ex:"superman",seconds:60}]}
+  ]},
+ {id:"fourthreetwoone",name:"4-3-2-1 Workout",plate:"green",mode:"rounds",minutes:23,format:"Rounds",
+  blurb:"4 minutes compound, 3 unilateral, 2 core, 1 high intensity. Rest 1 to 2 minutes, repeat 2 or 3 times.",
+  equipment:["Dumbbells","Mat"],source:"peanutbutterrunner.com",
+  roundOptions:[2,3],restOptions:[60,90,120],
+  sections:[
+   {id:"b4",title:"4 min Compound",short:"4",label:"Big moves, whole body",items:[{ex:"thruster",seconds:60},{ex:"renegade",seconds:60},{ex:"lungecurl",seconds:60,switchAt:30,note:"30 sec each leg"},{ex:"bridgepress",seconds:60}]},
+   {id:"b3",title:"3 min Unilateral",short:"3",label:"One side at a time",items:[{ex:"sldl",seconds:60,switchAt:30,note:"30 sec each leg"},{ex:"kickback",seconds:60,switchAt:30,note:"30 sec each arm"},{ex:"latlunge",seconds:60,switchAt:30,note:"30 sec each leg"}]},
+   {id:"b2",title:"2 min Core",short:"2",label:"Abs and obliques",items:[{ex:"lcrunch",seconds:60},{ex:"sideplank",seconds:60,switchAt:30,note:"30 sec each side"}]},
+   {id:"b1",title:"1 min High Intensity",short:"1",label:"Empty the tank",items:[{ex:"burpee",seconds:60}]}
+  ]},
+ {id:"beginner4wk",name:"Beginner's 4-Week At-Home Plan",theme:"her",plate:"rose",mode:"weekly",minutes:"30-45",format:"Weekly plan",
+  blurb:"Glutes, cardio, arms, cardio and core on weekdays, rest on the weekend. No gym needed.",
+  equipment:["Mat","Sturdy chair","Wall space","Comfortable shoes"],source:"the Shè Stylez Beginner's 4-Week At-Home Workout Plan",
+  tips:["30-45 mins per session","Stay hydrated","Eat high protein","When it gets easy, add a 4th round"],
+  sections:[
+   {id:"mon",title:"Monday",day:1,type:"circuit",label:"Glutes",items:[{ex:"glutebridge",target:"15 reps"},{ex:"bwsquat",target:"12 reps"},{ex:"revlunge",target:"10 reps per leg"},{ex:"donkeykick",target:"12 reps per leg"},{ex:"firehydrant",target:"12 reps per leg"}]},
+   {id:"tue",title:"Tuesday",day:2,type:"cardio",label:"Cardio",items:[{ex:"briskwalk",seconds:900},{ex:"dance",seconds:600},{ex:"intervalwalk",seconds:600,iv:60,ivMsg:"Easy pace|Fast pace"}]},
+   {id:"wed",title:"Wednesday",day:3,type:"circuit",label:"Arms",items:[{ex:"wallpushup",target:"12 reps"},{ex:"chairdip",target:"10 reps"},{ex:"armcircles",seconds:30,switchAt:15,swMsg:"Reverse direction",note:"switch direction halfway"},{ex:"shouldertaps",target:"10 taps per side"},{ex:"superman",target:"12 reps"}]},
+   {id:"thu",title:"Thursday",day:4,type:"cardio",label:"Cardio",items:[{ex:"briskwalk",seconds:900},{ex:"dance",seconds:600},{ex:"intervalwalk",seconds:600,iv:60,ivMsg:"Easy pace|Fast pace"}]},
+   {id:"fri",title:"Friday",day:5,type:"circuit",label:"Core",items:[{ex:"russiantwist",target:"10 per side"},{ex:"kneeelbow",target:"10 per side"},{ex:"mountainclimber",seconds:30},{ex:"deadbug",target:"8 per side"},{ex:"highknee",seconds:30}]},
+   {id:"sat",title:"Saturday",day:6,type:"rest",label:"Rest",items:[]},
+   {id:"sun",title:"Sunday",day:0,type:"rest",label:"Rest",items:[]}
+  ]},
+ {id:"home7",name:"7-Day Home Workout Plan",plate:"teal",mode:"sets",minutes:"30-45",format:"Sets and reps",
+  blurb:"No gym. No excuses. Just results. A different focus every day of the week, no equipment needed.",
+  equipment:["No equipment","Mat","Chair or bench","Sturdy step"],source:"the 7-Day Home Workout Plan poster",
+  tips:["Stay hydrated","Focus on form","Eat clean food","Sleep well","Be patient and stay consistent"],
+  sections:[
+   {id:"mon",title:"Monday",day:1,label:"Upper Body Strength",mins:"30-40",items:[{ex:"pushup",sets:3,reps:"12-15"},{ex:"pikepushup",sets:3,reps:"10-12"},{ex:"chairdip",sets:3,reps:"12-15"},{ex:"shouldertaps",sets:3,reps:"20 taps"},{ex:"supermanpull",sets:3,reps:"15"}]},
+   {id:"tue",title:"Tuesday",day:2,label:"Lower Body Strength",mins:"30-40",items:[{ex:"bwsquat",sets:4,reps:"15-20"},{ex:"lunge",sets:3,reps:"12 each leg"},{ex:"glutebridge",sets:3,reps:"15-20"},{ex:"calfraise",sets:3,reps:"20"},{ex:"wallsit",sets:3,seconds:30,lbl:"30-45 sec"}]},
+   {id:"wed",title:"Wednesday",day:3,label:"Core and Abs",mins:"25-35",items:[{ex:"fplank",sets:3,seconds:30,lbl:"30-45 sec"},{ex:"bicycle",sets:3,reps:"20 each side"},{ex:"russiantwist",sets:3,reps:"20 each side"},{ex:"legraise",sets:3,reps:"12-15"},{ex:"mountainclimber",sets:3,seconds:30,lbl:"30-45 sec"}]},
+   {id:"thu",title:"Thursday",day:4,label:"Full Body Circuit",mins:"30-45",items:[{ex:"burpee",sets:3,reps:"12-15"},{ex:"jumpsquat",sets:3,reps:"15"},{ex:"pushup",sets:3,reps:"12-15"},{ex:"mountainclimber",sets:3,seconds:30,lbl:"30 sec"},{ex:"fplank",sets:3,seconds:45,lbl:"45 sec"}]},
+   {id:"fri",title:"Friday",day:5,label:"Glutes and Legs",mins:"30-40",items:[{ex:"hipthrust",sets:3,reps:"15-20"},{ex:"bulgarian",sets:3,reps:"12 each leg"},{ex:"donkeykick",sets:3,reps:"15 each leg"},{ex:"stepup",sets:3,reps:"12 each leg"},{ex:"squathold",sets:3,seconds:30,lbl:"30-45 sec"}]},
+   {id:"sat",title:"Saturday",day:6,label:"Cardio and Conditioning",mins:"30-40",items:[{ex:"highknee",sets:3,seconds:30,lbl:"30-45 sec"},{ex:"jumpingjack",sets:3,seconds:45,lbl:"45 sec"},{ex:"burpee",sets:3,reps:"12-15"},{ex:"skater",sets:3,seconds:60,lbl:"30 sec each side",switchAt:30},{ex:"plankjack",sets:3,seconds:30,lbl:"30-45 sec"}]},
+   {id:"sun",title:"Sunday",day:0,label:"Active Recovery",mins:"30-60",items:[{ex:"yoga",sets:1,seconds:1200,lbl:"20 mins"},{ex:"stretching",sets:1,seconds:900,lbl:"15 mins"},{ex:"foamroll",sets:1,seconds:600,lbl:"10 mins"},{ex:"breathing",sets:1,seconds:300,lbl:"5 mins"},{ex:"lightwalk",sets:1,seconds:1200,lbl:"20-30 mins"}]}
+  ]}
+];
+
+/* ---------- Figure renderer (animated SVG) ---------- */
+function pt(p,j){var i=J[j]*2;return [p[i],p[i+1]];}
+var DB='<line class="metal" x1="-5" y1="0" x2="5" y2="0"/><rect class="plate" x="-8.5" y="-4.5" width="4" height="9" rx="1.2"/><rect class="plate" x="4.5" y="-4.5" width="4" height="9" rx="1.2"/>';
+var KB='<path class="metal" d="M-4 1 Q0 -6 4 1"/><circle class="plate" cx="0" cy="7" r="5.5"/>';
+function figure(key,plate,her){
+ var ex=EX[key],poses=ex.poses,n=poses.length,anim=n>1&&!reduceMotion;
+ var frames=[0],times=[0];
+ if(anim){frames=[];times=[];var seg=1/n;for(var i=0;i<n;i++){frames.push(i,i);times.push(i*seg,i*seg+seg*.38);}frames.push(0);times.push(1);}
+ var KT=times.map(function(t){return +t.toFixed(4)}).join(";");
+ var KS=new Array(frames.length).join("x").split("x").slice(0,frames.length-1).map(function(){return ".42 0 .58 1"}).join(";");
+ var dur=(n*1.25).toFixed(2)+"s";
+ function A(attr,vals){return '<animate attributeName="'+attr+'" values="'+vals.join(";")+'" keyTimes="'+KT+'" keySplines="'+KS+'" calcMode="spline" dur="'+dur+'" repeatCount="indefinite"/>';}
+ function val(j,c){return frames.map(function(f){return pt(poses[f],j)[c]});}
+ var P0=poses[0];
+ function ln(a,b,c){var s=pt(P0,a),e=pt(P0,b);return '<line class="limb '+(c||"")+'" x1="'+s[0]+'" y1="'+s[1]+'" x2="'+e[0]+'" y2="'+e[1]+'">'+(anim?A("x1",val(a,0))+A("y1",val(a,1))+A("x2",val(b,0))+A("y2",val(b,1)):"")+'</line>';}
+ function at(j,inner){var s=pt(P0,j);var tr=anim?'<animateTransform attributeName="transform" type="translate" values="'+frames.map(function(f){return pt(poses[f],j).join(" ")}).join(";")+'" keyTimes="'+KT+'" keySplines="'+KS+'" calcMode="spline" dur="'+dur+'" repeatCount="indefinite"/>':"";return '<g transform="translate('+s[0]+' '+s[1]+')">'+tr+inner+'</g>';}
+ var g=ex.gear,o='<svg class="fig" viewBox="0 -9 120 106" role="img" aria-label="'+ex.name+' demonstration" style="--plate:var(--'+plate+')">';
+ o+='<line class="ground" x1="4" y1="94.5" x2="116" y2="94.5"/>';
+ if(g==="pullbar")o+='<line class="metal" x1="26" y1="12" x2="94" y2="12" style="stroke-width:3"/><line class="metal" x1="28" y1="12" x2="28" y2="-8"/><line class="metal" x1="92" y1="12" x2="92" y2="-8"/>';
+ if(g==="dips")o+='<line class="metal" x1="44" y1="48" x2="80" y2="48" style="stroke-width:3"/><line class="metal" x1="49" y1="48" x2="49" y2="94"/><line class="metal" x1="75" y1="48" x2="75" y2="94"/>';
+ if(g==="bench")o+='<rect class="metal-f" x="2" y="72" width="30" height="22.5" rx="3" opacity=".4"/>';
+ if(g==="box")o+='<rect class="metal-f" x="62" y="80" width="30" height="14.5" rx="2" opacity=".45"/>';
+ if(g==="roller")o+='<circle class="plate" cx="74" cy="89.5" r="5" opacity=".9"/>';
+ if(g==="wall")o+='<rect class="metal-f" x="98" y="-9" width="10" height="103.5" opacity=".35"/>';
+ if(g==="chair")o+='<line class="metal" x1="20" y1="60" x2="48" y2="60" style="stroke-width:3.2"/><line class="metal" x1="22" y1="30" x2="22" y2="94"/><line class="metal" x1="46" y1="60" x2="46" y2="94"/>';
+ if(g==="cable"){var w=pt(P0,"w1");o+='<rect class="metal-f" x="92" y="-9" width="6" height="104" rx="2" opacity=".45"/><circle class="metal-f" cx="95" cy="-2" r="3"/><line class="metal" x1="95" y1="-2" x2="'+w[0]+'" y2="'+w[1]+'">'+(anim?A("x2",val("w1",0))+A("y2",val("w1",1)):"")+'</line>';}
+ if(g==="db2")o+=at("w2",'<g opacity=".55">'+DB+'</g>');
+ o+=ln("n","e2","far")+ln("e2","w2","far")+ln("p","k2","far")+ln("k2","f2","far");
+ o+=ln("n","p")+ln("p","k1")+ln("k1","f1")+ln("n","e1")+ln("e1","w1");
+ var h=pt(P0,"h");
+ if(her)o+=at("h",'<circle class="hair" cx="-4.6" cy="-5.6" r="3.9"/><circle class="head" r="6.6"/><circle class="plate" cx="-3.4" cy="-4.2" r="1.7"/>');
+ else o+='<circle class="head" cx="'+h[0]+'" cy="'+h[1]+'" r="6.6">'+(anim?A("cx",val("h",0))+A("cy",val("h",1)):"")+'</circle>';
+ if(g==="db2"||g==="db1")o+=at("w1",DB);
+ if(g==="db1v")o+=at("w1",'<g transform="rotate(90)">'+DB+'</g>');
+ if(g==="kb")o+=at("w1",KB);
+ if(g==="cable")o+=at("w1",'<line class="metal" x1="-4" y1="0" x2="4" y2="0" style="stroke-width:3"/>');
+ return o+'</svg>';
+}
+
+/* ---------- State (in memory only, resets on reload) ---------- */
+var S={view:"home",wid:null,sec:0,checks:{},amrap:{},opts:{fourthreetwoone:{rounds:2,rest:90},beginner4wk:{rounds:3},home7:{rest:60}},rnd:{},sets:{},ct:null,player:null,sound:true};
+function W(id){for(var i=0;i<WORKOUTS.length;i++)if(WORKOUTS[i].id===id)return WORKOUTS[i];}
+function ck(w,s,i){return w+"|"+s+"|"+i;}
+function fmt(sec){sec=Math.max(0,Math.ceil(sec));var m=Math.floor(sec/60),s=sec%60;return m+":"+(s<10?"0":"")+s;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]});}
+var $=function(id){return document.getElementById(id)};
+var app=$("app");
+
+/* ---------- Audio + haptics ---------- */
+var actx=null;
+function audio(){try{if(!actx)actx=new (window.AudioContext||window.webkitAudioContext)();if(actx.state==="suspended")actx.resume();}catch(e){}}
+function beep(f,d,v){if(!S.sound)return;try{audio();if(!actx)return;var o=actx.createOscillator(),g=actx.createGain(),t=actx.currentTime;o.type="sine";o.frequency.value=f||880;g.gain.setValueAtTime(v||.25,t);g.gain.exponentialRampToValueAtTime(.0001,t+(d||.14));o.connect(g);g.connect(actx.destination);o.start(t);o.stop(t+(d||.14)+.03);}catch(e){}}
+function buzz(ms){try{if(navigator.vibrate)navigator.vibrate(ms);}catch(e){}}
+var wakeLock=null;
+function wake(on){try{if(on&&navigator.wakeLock&&!wakeLock){navigator.wakeLock.request("screen").then(function(l){wakeLock=l}).catch(function(){});}if(!on&&wakeLock){wakeLock.release().catch(function(){});wakeLock=null;}}catch(e){}}
+var toastT=null;
+function toast(msg){var t=$("toast");t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){t.hidden=true},2600);}
+
+var ICON={
+ back:'<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
+ close:'<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+ play:'<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>',
+ pause:'<svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="3.2"/></svg>',
+ next:'<svg viewBox="0 0 24 24"><path d="M6 5l9 7-9 7zM18 5v14"/></svg>',
+ prev:'<svg viewBox="0 0 24 24"><path d="M18 5l-9 7 9 7zM6 5v14"/></svg>',
+ sound:'<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg>',
+ mute:'<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>'
+};
+
+/* ---------- Home ---------- */
+var DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+function totalMinutes(w){
+ if(w.mode==="rounds"){var o=S.opts[w.id];return Math.round((o.rounds*10*60+(o.rounds-1)*o.rest)/60);}
+ return w.minutes;
+}
+function homeView(){
+ var now=new Date(),dow=now.getDay(),am=W("amrap30"),todaySec=-1;
+ am.sections.forEach(function(s,i){if(s.day===dow)todaySec=i;});
+ var dateStr=now.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});
+ var h='<header class="top"><div class="brand"><img class="logo" src="'+LOGO+'" alt=""><b>FARA <span style="color:var(--accent-text)">GYM</span></b></div><span class="date">'+esc(dateStr)+'</span></header>';
+ if(todaySec>=0){var s=am.sections[todaySec];
+  h+='<section class="today" style="--plate:var(--red)"><span class="ring-bg" aria-hidden="true"></span><p class="eyebrow">Today, '+s.title+'</p><h2>AMRAP 30<br>'+s.label.split(":")[0]+'</h2><p>'+s.items.map(function(it){return EX[it.ex].name}).join(", ")+'.</p><button class="btn go" data-act="open" data-w="amrap30" data-s="'+todaySec+'">Start today\'s workout</button></section>';
+ }else{
+  h+='<section class="today" style="--plate:var(--blue)"><span class="ring-bg" aria-hidden="true"></span><p class="eyebrow">Today, '+DAYS[dow]+'</p><h2>Off day on the<br>AMRAP plan</h2><p>Rest up, or pick a 30 minute circuit below if you want to train.</p><button class="btn go" data-act="open" data-w="fullbody30" data-s="0">Try Full Body Strength 30</button></section>';
+ }
+ h+='<div class="week" aria-label="AMRAP training week">';
+ [1,2,3,4,5,6,0].forEach(function(d){var on=am.sections.some(function(s){return s.day===d});h+='<div class="wd'+(on?" on":"")+(d===dow?" now":"")+'"><span>'+DAYS[d].charAt(0)+'</span><b>'+DAYS[d]+'</b><i aria-hidden="true"></i></div>';});
+ h+='</div>';
+ h+='<div class="sec-title"><h2>Your workouts</h2><span class="prog-label">'+WORKOUTS.length+' plans</span></div><div class="lib">';
+ WORKOUTS.forEach(function(w){var exCount=0,seen={},ti=0,tchip="";w.sections.forEach(function(s,si){if((w.mode==="weekly"||w.mode==="sets")&&s.day===dow){ti=si;tchip='<span class="chip">Today: '+esc(s.label)+'</span>';}s.items.forEach(function(it){if(!seen[it.ex]){seen[it.ex]=1;exCount++;}})});
+  var secLbl=w.mode==="sets"?"7 days":w.mode==="weekly"?w.sections.filter(function(s){return s.type!=="rest"}).length+" training days":w.sections.length+" "+(w.mode==="amrap"?"days":w.mode==="circuits"?"circuits":"blocks");
+  h+='<button class="wcard'+(w.theme==="her"?" her":"")+'" data-act="open" data-w="'+w.id+'" data-s="'+ti+'" style="--plate:var(--'+w.plate+')"><span class="disc"></span><span style="min-width:0"><h3>'+esc(w.name)+'</h3><p>'+esc(w.blurb)+'</p><span class="chips">'+tchip+'<span class="chip">'+w.format+'</span><span class="chip">'+totalMinutes(w)+' min</span><span class="chip">'+exCount+' exercises</span><span class="chip">'+secLbl+'</span></span></span></button>';});
+ h+='</div>';
+ h+='<div class="sec-title"><h2>Nutrition</h2></div><button class="wcard fuel" data-act="food" style="--plate:var(--green);margin-bottom:30px"><span class="disc"></span><span style="min-width:0"><h3>Athlete Fuel Guide</h3><p>Protein, carbs and calories for the 20 foods athletes eat most. Sort, search and switch between per serving and per 100 g.</p><span class="chips"><span class="chip">20 foods</span><span class="chip">Sortable table</span><span class="chip">USDA based</span></span></span></button>';
+ h+='<div class="sec-title"><h2>Quick answers</h2></div><div class="faq">'+
+ '<details><summary>What does AMRAP mean?</summary><p>As many rounds as possible. You repeat the exercise list for a fixed time, here 30 minutes, and count how many full rounds you finish. Check off each move; when all are checked the round is counted and your rest timer starts.</p></details>'+
+ '<details><summary>How do the timers work?</summary><p>Timed moves have a 60 second button on each card. For the circuit workouts, Start guided session runs every exercise and rest in order with beeps for the last 3 seconds and a switch sides cue at 30 seconds.</p></details>'+
+ '<details><summary>What equipment do I need?</summary><p>Dumbbells cover most moves. The AMRAP plan also uses a pull-up bar, dip bars and a cable or band. A dumbbell can replace the kettlebell.</p></details>'+
+ '<details><summary>Which plan is best for beginners?</summary><p>The Beginner\'s 4-Week At-Home Plan. It uses bodyweight moves, a chair and a wall, with 30 to 45 minute sessions five days a week and two rest days. Start with 3 rounds and add a 4th when it gets easy.</p></details>'+
+ '<details><summary>Is my progress saved?</summary><p>No. Checkboxes, rounds and timers reset when you close or reload the page, so every visit starts fresh.</p></details>'+
+ '</div><p class="credit">Workouts adapted from thefitnessphantom.com, runningonrealfood.com, peanutbutterrunner.com and Shè Stylez. Exercise illustrations are original. Check with a health professional before starting a new program.</p>';
+ return h;
+}
+
+/* ---------- Workout view ---------- */
+function itemCard(w,s,it,i){
+ var ex=EX[it.ex],k=ck(w.id,s.id,i),done=!!S.checks[k],timed=!!it.seconds,ns=it.sets||0;
+ var tgt=ns?(ns>1?ns+" x "+(it.reps||it.lbl):it.lbl):(it.target||(it.seconds+" seconds"));
+ var pills="";if(ns>1){var dn=S.sets[k]||0;pills='<div class="setrow" id="sets-'+k+'" role="group" aria-label="Sets">';for(var q=0;q<ns;q++)pills+='<button class="setp'+(q<dn?" on":"")+'" data-act="set" data-k="'+k+'" data-i="'+q+'" data-n="'+ns+'" aria-pressed="'+(q<dn)+'" aria-label="Set '+(q+1)+'">'+(q+1)+'</button>';pills+='</div>';}
+ return '<article class="ex'+(done?" done":"")+'" id="card-'+k+'">'+
+  '<div class="ex-fig">'+figure(it.ex,w.plate,w.theme==="her")+'</div>'+
+  '<div class="ex-main"><span class="ex-n num">'+(i+1<10?"0":"")+(i+1)+'</span><h3>'+esc(ex.name)+'</h3><p class="ex-target">'+esc(tgt)+(it.note?", "+esc(it.note):"")+'</p><p class="ex-mus">'+esc(ex.muscles)+'</p>'+pills+
+  '<div class="ex-actions">'+(timed?'<button class="ctimer" data-act="ctimer" data-k="'+k+'" data-sec="'+it.seconds+'" data-sw="'+(it.switchAt||0)+'" data-n="'+ns+'" data-swmsg="'+esc(it.swMsg||"Switch sides")+'" data-iv="'+(it.iv||0)+'" data-ivmsg="'+esc(it.ivMsg||"")+'" id="ct-'+k+'" aria-label="Start '+it.seconds+' second timer for '+esc(ex.name)+'"><i></i><span class="num">'+fmt(it.seconds)+'</span></button>':'')+
+  '<label class="check"><input type="checkbox" id="chk-'+k+'" data-act="check" data-k="'+k+'" data-n="'+ns+'"'+(done?" checked":"")+'><span>Done</span></label></div></div>'+
+  '<details class="ex-how"><summary>How to do it</summary><ol>'+ex.steps.map(function(t){return "<li>"+esc(t)+"</li>"}).join("")+'</ol><p><b>Tip:</b> '+esc(ex.tip)+'</p><p><b>Equipment:</b> '+esc(ex.equip)+'</p></details>'+
+ '</article>';
+}
+function amrapState(w,s){var k=w.id+"|"+s.id;if(!S.amrap[k])S.amrap[k]={left:s.minutes*60,run:false,end:0,rounds:0,rest:0,restEnd:0,restRun:false,restPick:s.rest[0],over:false};return S.amrap[k];}
+function amrapPanel(w,s){
+ var a=amrapState(w,s);
+ return '<section class="amrap'+(a.restRun?" resting":"")+'" id="amrap" aria-label="AMRAP timer">'+
+ '<div class="clockrow"><div><span class="lbl">Time left</span><div class="clock" id="am-clock">'+fmt(a.left)+'</div></div><div class="rounds"><span class="lbl">Rounds</span><b class="num" id="am-rounds">'+a.rounds+'</b></div></div>'+
+ '<div class="ctrls"><button class="btn small" data-act="am-toggle" id="am-toggle">'+(a.run?"Pause":(a.left<s.minutes*60?"Resume":"Start 30:00"))+'</button><button class="btn small ghost" data-act="am-reset">Reset</button><span style="flex:1"></span><button class="pm" data-act="am-r" data-d="-1" aria-label="Remove a round">-</button><button class="pm" data-act="am-r" data-d="1" aria-label="Add a round">+</button></div>'+
+ '<div class="rest"><span>Rest between rounds</span>'+(s.rest.length>1?'<span class="seg" role="group" aria-label="Rest length">'+s.rest.map(function(r){return '<button data-act="am-pick" data-r="'+r+'" aria-pressed="'+(a.restPick===r)+'">'+r+'s</button>'}).join("")+'</span>':'<span class="chip">'+s.rest[0]+'s</span>')+
+ '<button class="btn small ghost" data-act="am-rest">'+(a.restRun?"Skip rest":"Rest now")+'</button><span class="resttime" id="am-rest">'+(a.restRun?fmt(a.rest):"")+'</span></div>'+
+ '</section>';
+}
+function restCard(w){
+ var nx=0;for(var j=1;j<=w.sections.length;j++){var q=(S.sec+j)%w.sections.length;if(w.sections[q].type!=="rest"){nx=q;break;}}
+ return '<div class="restday"><p class="eyebrow">Recovery</p><h3>Rest day</h3><p>Rest is part of the plan. Take an easy stroll or stretch if you feel like moving.</p><ul><li>Stay hydrated</li><li>Eat high protein</li></ul><button class="btn" data-act="tab" data-i="'+nx+'">Next: '+esc(w.sections[nx].title)+', '+esc(w.sections[nx].label)+'</button></div>';
+}
+function rndState(w,s){var k=w.id+"|"+s.id;if(!S.rnd[k])S.rnd[k]={done:0,restRun:false,rest:0,restEnd:0,lastBeep:null};return S.rnd[k];}
+function roundsPanel(w,s){
+ var r=rndState(w,s),N=S.opts[w.id].rounds;
+ return '<section class="amrap'+(r.restRun?" resting":"")+'" id="amrap" aria-label="Round tracker">'+
+ '<div class="clockrow"><div><span class="lbl">Round</span><div class="clock"><span id="rd-cur">'+Math.min(r.done+1,N)+'</span><span style="opacity:.55;font-size:.55em"> of '+N+'</span></div></div><div class="rounds"><span class="lbl">Rest</span><b class="num" id="am-rest">'+(r.restRun?fmt(r.rest):"60s")+'</b></div></div>'+
+ '<p style="margin:0;font-size:13px;opacity:.85" id="rd-msg">'+rdMsg(r,N)+'</p>'+
+ '<div class="ctrls"><button class="btn small" data-act="rd-rest" id="rd-rest">'+(r.restRun?"Skip rest":"Start rest")+'</button><button class="btn small ghost" data-act="rd-reset">Reset</button></div></section>';
+}
+function rdMsg(r,N){return r.done>=N?"All "+N+" rounds done. Great work!":r.restRun?"Resting. Your next round starts when the timer ends.":"Check off every move to finish the round. Your 60 sec rest starts on its own.";}
+function updRounds(w,s){var r=rndState(w,s),N=S.opts[w.id].rounds;if($("rd-cur"))$("rd-cur").textContent=Math.min(r.done+1,N);if($("am-rest"))$("am-rest").textContent=r.restRun?fmt(r.rest):"60s";if($("rd-msg"))$("rd-msg").textContent=rdMsg(r,N);if($("rd-rest"))$("rd-rest").textContent=r.restRun?"Skip rest":"Start rest";var p=$("amrap");if(p)p.classList.toggle("resting",r.restRun);}
+function herRoundDone(w,s){
+ var r=rndState(w,s),N=S.opts[w.id].rounds;if(r.done>=N)return;r.done++;beep(1046,.18);buzz(120);
+ setTimeout(function(){s.items.forEach(function(_,i){setCheck(ck(w.id,s.id,i),false,true)});},450);
+ if(r.done>=N){r.restRun=false;toast("All "+N+" rounds done. Great work!");setTimeout(function(){beep(1318,.3)},200);}
+ else{r.restRun=true;r.rest=60;r.restEnd=Date.now()+60000;r.lastBeep=null;toast("Round "+r.done+" done. Rest 60 sec.");}
+ updRounds(w,s);
+}
+function tickWeekly(w,now){
+ var s=w.sections[S.sec],isSets=w.mode==="sets";if(s.type!=="circuit"&&!isSets)return;var r=rndState(w,s);if(!r.restRun)return;
+ r.rest=(r.restEnd-now)/1000;var wr=Math.ceil(r.rest);if(wr<=3&&wr>=1&&r.lastBeep!==wr){r.lastBeep=wr;beep(660,.1);}
+ if(r.rest<=0){r.restRun=false;r.rest=0;beep(1046,.3);buzz(200);toast(isSets?"Rest over. Next set.":"Rest over. Start round "+(r.done+1)+".");}
+ if(isSets)updSetsPanel(w,s);else updRounds(w,s);
+}
+/* Sets mode */
+function setTotals(w,s){var t=0,d=0;s.items.forEach(function(it,i){var n=it.sets||1,k=ck(w.id,s.id,i);t+=n;d+=n>1?(S.sets[k]||0):(S.checks[k]?1:0);});return [d,t];}
+function setsPanel(w,s){
+ var r=rndState(w,s),tt=setTotals(w,s),rp=S.opts[w.id].rest;
+ return '<section class="amrap'+(r.restRun?" resting":"")+'" id="amrap" aria-label="Set tracker">'+
+ '<div class="clockrow"><div><span class="lbl">Sets done</span><div class="clock"><span id="st-done">'+tt[0]+'</span><span style="opacity:.55;font-size:.55em"> of '+tt[1]+'</span></div></div><div class="rounds"><span class="lbl">Rest</span><b class="num" id="am-rest">'+(r.restRun?fmt(r.rest):rp+"s")+'</b></div></div>'+
+ '<div class="ctrls"><button class="btn small" data-act="st-rest" id="rd-rest">'+(r.restRun?"Skip rest":"Start rest")+'</button><span style="font-size:13px;opacity:.85">About '+esc(s.mins)+' mins today</span></div></section>';
+}
+function updSetsPanel(w,s){var r=rndState(w,s),tt=setTotals(w,s),rp=S.opts[w.id].rest;if($("st-done"))$("st-done").textContent=tt[0];if($("am-rest"))$("am-rest").textContent=r.restRun?fmt(r.rest):rp+"s";if($("rd-rest"))$("rd-rest").textContent=r.restRun?"Skip rest":"Start rest";var p=$("amrap");if(p)p.classList.toggle("resting",r.restRun);}
+function updPills(k){var row=$("sets-"+k);if(!row)return;var d=S.sets[k]||0;row.querySelectorAll(".setp").forEach(function(b,q){b.classList.toggle("on",q<d);b.setAttribute("aria-pressed",q<d);});}
+function setCount(k,n,val,rest){
+ var w=W(S.wid),s=w.sections[S.sec],prev=S.sets[k]||0;val=Math.max(0,Math.min(n,val));S.sets[k]=val;updPills(k);
+ setCheck(k,val>=n,true);
+ if(val>prev){beep(880,.12);buzz(60);
+  if(val>=n){toast(EX[s.items[+k.split("|")[2]].ex].name+" complete.");var tt=setTotals(w,s);if(tt[0]>=tt[1]){setTimeout(function(){beep(1318,.3)},200);toast("Workout complete. Great work!");}}
+  else if(rest){var r=rndState(w,s),rp=S.opts[w.id].rest;r.restRun=true;r.rest=rp;r.restEnd=Date.now()+rp*1000;r.lastBeep=null;toast("Set "+val+" done. Rest "+rp+" sec.");}
+ }
+ updSetsPanel(w,s);
+}
+function progressHtml(w,s){var n=s.items.length,d=0;s.items.forEach(function(_,i){if(S.checks[ck(w.id,s.id,i)])d++;});return '<div><span class="prog-label" id="prog-l">'+d+' of '+n+' done</span><div class="progress"><i id="prog-b" style="width:'+(d/n*100)+'%"></i></div></div>';}
+function workoutView(){
+ var w=W(S.wid),s=w.sections[S.sec];
+ var h='<div class="bar-top"><button class="icon-btn" data-act="home" aria-label="Back to workouts">'+ICON.back+'</button><span class="t">'+esc(w.name)+'</span></div>';
+ h+='<section class="hero" style="--plate:var(--'+w.plate+')"><div class="hero-row"><span class="disc"></span><h1>'+esc(w.name)+'</h1></div><p>'+esc(w.blurb)+'</p><div class="chips" style="margin-top:0">'+w.equipment.map(function(e){return '<span class="chip">'+esc(e)+'</span>'}).join("")+'</div></section>';
+ if(w.mode==="weekly"){var ow=S.opts[w.id];
+  h+='<section class="opts" style="margin-bottom:16px"><div class="opt-row"><span>Rounds on strength days</span><span class="seg" role="group" aria-label="Rounds">'+[3,4].map(function(r){return '<button data-act="opt" data-o="rounds" data-v="'+r+'" aria-pressed="'+(ow.rounds===r)+'">'+r+'</button>'}).join("")+'</span></div><div class="tips"><p class="eyebrow">Tips</p><ul>'+w.tips.map(function(t){return "<li>"+esc(t)+"</li>"}).join("")+'</ul></div></section>';
+ }
+ if(w.mode==="sets"){var o7=S.opts[w.id];
+  h+='<section class="opts" style="margin-bottom:16px"><div class="opt-row"><span>Rest between sets</span><span class="seg" role="group" aria-label="Rest between sets">'+[30,60,90].map(function(r){return '<button data-act="opt" data-o="rest" data-v="'+r+'" aria-pressed="'+(o7.rest===r)+'">'+r+'s</button>'}).join("")+'</span></div><div class="tips"><p class="eyebrow">Daily habits</p><ul>'+w.tips.map(function(t){return "<li>"+esc(t)+"</li>"}).join("")+'</ul></div></section>';
+ }
+ if(w.mode==="circuits"||w.mode==="rounds"){
+  h+='<section class="opts" style="margin-bottom:16px">';
+  if(w.mode==="rounds"){var o=S.opts[w.id];
+   h+='<div class="opt-row"><span>Rounds</span><span class="seg" role="group" aria-label="Rounds">'+w.roundOptions.map(function(r){return '<button data-act="opt" data-o="rounds" data-v="'+r+'" aria-pressed="'+(o.rounds===r)+'">'+r+'</button>'}).join("")+'</span></div>';
+   h+='<div class="opt-row"><span>Rest between rounds</span><span class="seg" role="group" aria-label="Rest between rounds">'+w.restOptions.map(function(r){return '<button data-act="opt" data-o="rest" data-v="'+r+'" aria-pressed="'+(o.rest===r)+'">'+(r/60)+' min</button>'}).join("")+'</span></div>';
+  }else{h+='<div class="opt-row"><span>60s work, 60s rest after each round, 2 rounds per circuit</span></div>';}
+  h+='<div class="start-row"><button class="btn" data-act="play" style="--plate:var(--'+w.plate+')">Start guided session</button><span class="prog-label">About '+totalMinutes(w)+' min with audio cues</span></div></section>';
+ }
+ h+='<div class="tabs" role="tablist" style="--plate:var(--'+w.plate+')">'+w.sections.map(function(x,i){return '<button class="tab" role="tab" aria-selected="'+(i===S.sec)+'" data-act="tab" data-i="'+i+'">'+esc(x.title)+'<small>'+esc(x.label.split(":")[0])+'</small></button>'}).join("")+'</div>';
+ var fmtLine=w.mode==="sets"?s.items.length+" exercises, "+s.mins+" mins. Tap a numbered circle after each set; rest starts on its own.":w.mode==="weekly"?(s.type==="circuit"?s.items.length+" moves, "+S.opts[w.id].rounds+" rounds, 60 sec rest between rounds":s.type==="cardio"?"Three cardio blocks, about 35 minutes":"Recovery day"):w.mode==="amrap"?"AMRAP "+s.minutes+" minutes. Rest "+s.rest.join(" to ")+" sec between rounds.":w.mode==="circuits"?s.items.length+" moves x 60 sec, 60 sec rest, "+s.rounds+" rounds":s.items.length+" moves x 60 sec, no rest inside the block";
+ h+='<section style="--plate:var(--'+w.plate+')"><div class="sec-head"><p class="eyebrow">'+esc(s.label)+'</p><h2>'+esc(s.title)+'</h2><p>'+esc(fmtLine)+'</p>'+(s.type==="rest"?"":progressHtml(w,s))+'</div>';
+ if(s.type==="rest")h+=restCard(w);
+ if(w.mode==="amrap")h+=amrapPanel(w,s);
+ if(w.mode==="weekly"&&s.type==="circuit")h+=roundsPanel(w,s);
+ if(w.mode==="sets")h+=setsPanel(w,s);
+ h+='<div class="list">'+s.items.map(function(it,i){return itemCard(w,s,it,i)}).join("")+'</div></section>';
+ h+='<p class="credit" style="margin-top:20px">Adapted from '+esc(w.source)+'.'+(w.mode==="weekly"?" The original plan lists exercises only, so reps and times here are suggested starting points.":w.mode==="sets"?" Timers start at the low end of each range; hold longer as you get stronger.":"")+' Illustrations are original.</p>';
+ return h;
+}
+
+/* ---------- Athlete Fuel Guide ---------- */
+S.food={basis:"serving",sort:5,dir:-1,q:"",cat:"All"};
+function foodVals(f){var g=S.food.basis==="serving"?f[4]/100:1;return [r1(f[5]*g),r1(f[6]*g),Math.round(f[7]*g)];}
+function foodRows(){
+ var F=S.food,q=normalize(F.q);
+ var rows=FOOD.map(function(f,i){return i}).filter(function(i){var f=FOOD[i];return (F.cat==="All"||f[2]===F.cat)&&(!q||normalize(f[0]+" "+f[1]).indexOf(q)>=0);});
+ rows.sort(function(a,b){if(F.sort===0)return F.dir*(FOOD[a][0]<FOOD[b][0]?-1:1);var va=foodVals(FOOD[a])[F.sort-5],vb=foodVals(FOOD[b])[F.sort-5];return F.dir*(va-vb);});
+ var maxP=Math.max.apply(null,FOOD.map(function(f){return foodVals(f)[0]}));
+ if(!rows.length)return '<tr><td colspan="4" class="f-empty">No foods match "'+esc(F.q)+'". Try chicken, rice or oats.</td></tr>';
+ return rows.map(function(i){var f=FOOD[i],v=foodVals(f);
+  return '<tr><td class="f-name"><b>'+esc(f[0])+'</b><small>'+(S.food.basis==="serving"?esc(f[3]):"per 100 g")+' &middot; '+esc(f[2])+'</small></td><td class="num f-p"><b>'+v[0]+'</b><i style="width:'+Math.max(4,v[0]/maxP*100)+'%"></i></td><td class="num">'+v[1]+'</td><td class="num">'+v[2]+'</td></tr>';}).join("");
+}
+function sortBtn(col,label,unit){var on=S.food.sort===col;return '<th scope="col" class="'+(col?"num":"")+'"><button data-act="f-sort" data-c="'+col+'" aria-sort="'+(on?(S.food.dir>0?"ascending":"descending"):"none")+'">'+label+(unit?'<small>'+unit+'</small>':'')+'<span aria-hidden="true">'+(on?(S.food.dir>0?" ▲":" ▼"):"")+'</span></button></th>';}
+function foodView(){
+ var F=S.food,cats=["All","Protein","Carbs","Plant","Nuts"];
+ var h='<div class="bar-top"><button class="icon-btn" data-act="home" aria-label="Back to home">'+ICON.back+'</button><span class="t">Athlete Fuel Guide</span></div>';
+ h+='<section class="hero" style="--plate:var(--green)"><div class="hero-row"><span class="disc"></span><h1>Athlete Fuel Guide</h1></div><p>20 foods athletes eat most, with protein, carbohydrates and calories. Tap a column to sort.</p></section>';
+ h+='<section class="opts" style="margin-bottom:12px"><div class="opt-row"><span>Show values</span><span class="seg" role="group" aria-label="Show values"><button data-act="f-basis" data-v="serving" aria-pressed="'+(F.basis==="serving")+'">Per serving</button><button data-act="f-basis" data-v="100" aria-pressed="'+(F.basis==="100")+'">Per 100 g</button></span></div>'+
+  '<label class="f-search"><span class="sr">Search foods</span><input id="food-q" type="search" placeholder="Search foods, e.g. eggs" value="'+esc(F.q)+'"></label>'+
+  '<div class="chips" style="margin-top:0">'+cats.map(function(c){return '<button class="chip f-cat'+(F.cat===c?" on":"")+'" data-act="f-cat" data-v="'+c+'" aria-pressed="'+(F.cat===c)+'">'+c+'</button>'}).join("")+'</div></section>';
+ h+='<div class="f-wrap"><table class="ftable"><caption class="sr">Protein, carbohydrates and calories of 20 athlete foods</caption><thead><tr>'+sortBtn(0,"Food")+sortBtn(5,"Protein","g")+sortBtn(6,"Carbs","g")+sortBtn(7,"Calories","kcal")+'</tr></thead><tbody id="food-rows">'+foodRows()+'</tbody></table></div>';
+ h+='<p class="credit" style="margin-top:14px">Approximate values based on USDA FoodData Central. Brands, cuts and cooking methods vary, so check labels for exact numbers.</p>';
+ return h;
+}
+function render(){
+ var cw=S.view==="workout"?W(S.wid):null;document.body.classList.toggle("her",!!(cw&&cw.theme==="her"));
+ app.innerHTML=S.view==="home"?homeView():S.view==="food"?foodView():workoutView();
+}
+
+/* ---------- Checks ---------- */
+function setCheck(k,v,silent){
+ S.checks[k]=v;var c=$("card-"+k);if(c)c.classList.toggle("done",v);var b=$("chk-"+k);if(b)b.checked=v;
+ if(S.view==="workout"){var w=W(S.wid),s=w.sections[S.sec],n=s.items.length,d=0;s.items.forEach(function(_,i){if(S.checks[ck(w.id,s.id,i)])d++;});
+  if($("prog-l"))$("prog-l").textContent=d+" of "+n+" done";if($("prog-b"))$("prog-b").style.width=(d/n*100)+"%";
+  if(w.mode==="amrap"&&d===n&&v&&!silent)roundDone(w,s);
+  if(w.mode==="weekly"&&s.type==="circuit"&&d===n&&v&&!silent)herRoundDone(w,s);
+ }
+}
+function roundDone(w,s){
+ var a=amrapState(w,s);a.rounds++;beep(1046,.18);buzz(120);
+ setTimeout(function(){s.items.forEach(function(_,i){setCheck(ck(w.id,s.id,i),false,true)});},450);
+ if(a.run&&a.left>0){startRest(a);toast("Round "+a.rounds+" done. Rest "+a.restPick+" sec.");}else toast("Round "+a.rounds+" done.");
+ updAmrap(w,s);
+}
+function startRest(a){a.rest=a.restPick;a.restEnd=Date.now()+a.rest*1000;a.restRun=true;a.lastBeep=null;var p=$("amrap");if(p)p.classList.add("resting");}
+function updAmrap(w,s){var a=amrapState(w,s);if($("am-clock"))$("am-clock").textContent=fmt(a.left);if($("am-rounds"))$("am-rounds").textContent=a.rounds;if($("am-rest"))$("am-rest").textContent=a.restRun?fmt(a.rest):"";}
+
+/* ---------- Card timer ---------- */
+function stopCardTimer(){if(!S.ct)return;var b=$("ct-"+S.ct.k);if(b){b.classList.remove("run");b.style.setProperty("--pct",0);b.querySelector("span").textContent=fmt(S.ct.total);}S.ct=null;wake(false);}
+
+/* ---------- Guided player ---------- */
+function buildSteps(w){
+ var steps=[];
+ function work(s,it,ctx,i){steps.push({kind:"work",ex:it.ex,sec:it.seconds,sw:it.switchAt||0,ctx:ctx,k:ck(w.id,s.id,i),note:it.note||""});}
+ if(w.mode==="circuits"){
+  w.sections.forEach(function(s,si){for(var r=1;r<=s.rounds;r++){s.items.forEach(function(it,i){work(s,it,s.title+", round "+r+" of "+s.rounds,i)});var last=si===w.sections.length-1&&r===s.rounds;if(!last)steps.push({kind:"rest",sec:s.rest,ctx:r<s.rounds?"Then round "+(r+1)+" of "+s.title:"Then "+w.sections[si+1].title});}});
+ }else{
+  var o=S.opts[w.id];
+  for(var r=1;r<=o.rounds;r++){w.sections.forEach(function(s){s.items.forEach(function(it,i){work(s,it,s.title+", round "+r+" of "+o.rounds,i)})});if(r<o.rounds)steps.push({kind:"rest",sec:o.rest,ctx:"Then round "+(r+1)+" of "+o.rounds});}
+ }
+ steps.unshift({kind:"ready",sec:10,ctx:"First up"});
+ return steps;
+}
+function nextWork(steps,i){for(var j=i+1;j<steps.length;j++)if(steps[j].kind==="work")return steps[j];return null;}
+function openPlayer(){
+ var w=W(S.wid);audio();stopCardTimer();
+ var steps=buildSteps(w);
+ S.player={w:w,steps:steps,i:0,left:steps[0].sec,end:Date.now()+steps[0].sec*1000,run:true,started:Date.now(),workDone:0,finished:false,lastBeep:null,switched:false};
+ $("player").hidden=false;document.body.style.overflow="hidden";wake(true);renderPlayer();
+}
+function closePlayer(){S.player=null;$("player").hidden=true;$("player").innerHTML="";document.body.style.overflow="";wake(false);}
+function goStep(i){var P=S.player;if(i<0)i=0;if(i>=P.steps.length){finishPlayer();return;}P.i=i;P.left=P.steps[i].sec;P.end=Date.now()+P.left*1000;P.lastBeep=null;P.switched=false;renderPlayer();}
+function finishPlayer(){var P=S.player;P.finished=true;P.run=false;beep(784,.15);setTimeout(function(){beep(1046,.3)},180);buzz([100,80,200]);wake(false);renderPlayer();}
+function renderPlayer(){
+ var P=S.player,w=P.w,el=$("player");
+ if(P.finished){var mins=Math.round((Date.now()-P.started)/60000);
+  el.innerHTML='<div class="pl" style="--plate:var(--'+w.plate+')"><div class="done-card"><span class="disc" style="width:72px;height:72px;box-shadow:inset 0 0 0 12px color-mix(in srgb,var(--plate) 72%,#000 28%)"></span><h2>Workout complete</h2><p class="ctx">'+esc(w.name)+'</p><div class="stats"><div class="stat"><b>'+mins+'</b><span>minutes</span></div><div class="stat"><b>'+P.workDone+'</b><span>intervals done</span></div></div><button class="btn" data-act="pl-close">Back to workout</button></div></div>';return;}
+ var st=P.steps[P.i],exKey=st.kind==="work"?st.ex:(nextWork(P.steps,P.i)||{}).ex,ex=exKey?EX[exKey]:null,nx=nextWork(P.steps,P.i);
+ var nWork=P.steps.filter(function(x){return x.kind==="work"}).length,idxWork=P.steps.slice(0,P.i+1).filter(function(x){return x.kind==="work"}).length;
+ var kindLbl=st.kind==="work"?"Work":st.kind==="rest"?"Rest":"Get ready";
+ var title=st.kind==="work"?ex.name:st.kind==="rest"?"Rest":"Get ready";
+ var ctx=st.kind==="work"?st.ctx+(st.note?" | "+st.note:""):(ex?st.ctx+": "+ex.name:st.ctx);
+ el.innerHTML='<div class="pl" style="--plate:var(--'+w.plate+')">'+
+  '<div class="pl-top"><button class="icon-btn" data-act="pl-close" aria-label="End session">'+ICON.close+'</button><span class="t">'+esc(w.name)+' <span class="num" style="color:var(--muted)">'+idxWork+'/'+nWork+'</span></span><button class="icon-btn" data-act="pl-sound" aria-label="'+(S.sound?"Mute":"Unmute")+' sounds">'+(S.sound?ICON.sound:ICON.mute)+'</button></div>'+
+  '<div class="pl-bar"><i style="width:'+(P.i/(P.steps.length-1)*100)+'%"></i></div>'+
+  '<div class="pl-stage"><span class="pl-kind '+st.kind+'">'+kindLbl+'</span>'+
+  (ex?'<div class="pl-fig"'+(st.kind!=="work"?' style="opacity:.6"':'')+'>'+figure(exKey,w.plate)+'</div>':'')+
+  '<h2>'+esc(title)+'</h2><p class="ctx">'+esc(ctx)+'</p>'+
+  (st.kind==="work"&&ex?'<p class="cue">'+esc(ex.steps[0])+'</p>':'')+
+  '<div class="ring'+(st.kind!=="work"?" rest":"")+'"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="44"/><circle class="val" id="pl-ring" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="0"/></svg><b id="pl-time">'+fmt(P.left)+'</b></div>'+
+  (st.kind==="work"&&nx?'<p class="pl-next">Next: <b>'+esc(EX[nx.ex].name)+'</b></p>':(st.kind==="work"?'<p class="pl-next">Last interval. Finish strong.</p>':''))+
+  '</div><div class="pl-ctrl"><button class="icon-btn" data-act="pl-prev" aria-label="Previous">'+ICON.prev+'</button><button class="icon-btn main" data-act="pl-toggle" aria-label="'+(P.run?"Pause":"Resume")+'" id="pl-toggle">'+(P.run?ICON.pause:ICON.play)+'</button><button class="icon-btn" data-act="pl-next" aria-label="Skip">'+ICON.next+'</button></div></div>';
+ updRing();
+}
+function updRing(){var P=S.player;if(!P||P.finished)return;var st=P.steps[P.i],r=$("pl-ring"),t=$("pl-time");if(t)t.textContent=fmt(P.left);if(r)r.setAttribute("stroke-dashoffset",(276.46*(1-P.left/st.sec)).toFixed(2));}
+
+/* ---------- Ticker ---------- */
+setInterval(function(){
+ var now=Date.now();
+ // guided player
+ var P=S.player;
+ if(P&&P.run&&!P.finished){
+  P.left=(P.end-now)/1000;var st=P.steps[P.i],whole=Math.ceil(P.left);
+  if(whole<=3&&whole>=1&&P.lastBeep!==whole){P.lastBeep=whole;beep(660,.1);}
+  if(st.kind==="work"&&st.sw&&!P.switched&&P.left<=st.sec-st.sw){P.switched=true;beep(988,.12);setTimeout(function(){beep(988,.12)},160);buzz(150);toast("Switch sides");}
+  if(P.left<=0){if(st.kind==="work"){P.workDone++;setCheck(st.k,true,true);}beep(st.kind==="work"?523:1046,.3);buzz(200);goStep(P.i+1);}else updRing();
+ }
+ // card timer
+ var C=S.ct;
+ if(C){var left=(C.end-now)/1000,b=$("ct-"+C.k);
+  if(left<=3&&left>0&&C.lastBeep!==Math.ceil(left)){C.lastBeep=Math.ceil(left);beep(660,.1);}
+  if(C.sw&&!C.switched&&left<=C.total-C.sw){C.switched=true;beep(988,.12);setTimeout(function(){beep(988,.12)},160);buzz(150);toast(C.swMsg||"Switch sides");}
+  if(C.iv&&left>0){var ivi=Math.floor((C.total-left)/C.iv);if(ivi!==C.lastIv){C.lastIv=ivi;beep(988,.12);setTimeout(function(){beep(988,.12)},160);buzz(150);toast(C.ivMsg[ivi%2]+" for 1 minute");}}
+  if(left<=0){beep(1046,.3);buzz(200);var k=C.k,cn=C.n;stopCardTimer();if(cn>1)setCount(k,cn,(S.sets[k]||0)+1,true);else{setCheck(k,true);if(W(S.wid).mode==="sets")updSetsPanel(W(S.wid),W(S.wid).sections[S.sec]);toast("Time. Marked as done.");}}
+  else if(b){b.querySelector("span").textContent=fmt(left);b.style.setProperty("--pct",((1-left/C.total)*100).toFixed(1));}
+ }
+ // AMRAP
+ if(S.view==="workout"){var w=W(S.wid);if(w&&w.mode==="amrap"){var s=w.sections[S.sec],a=amrapState(w,s);
+  if(a.run){a.left=(a.end-now)/1000;if(a.left<=0){a.left=0;a.run=false;a.restRun=false;wake(false);beep(784,.15);setTimeout(function(){beep(1046,.4)},180);buzz([100,80,300]);toast("Time! "+a.rounds+" rounds completed.");render();return;}}
+  if(a.restRun&&a.run){a.rest=(a.restEnd-now)/1000;var wr=Math.ceil(a.rest);if(wr<=3&&wr>=1&&a.lastBeep!==wr){a.lastBeep=wr;beep(660,.1);}
+   if(a.rest<=0){a.restRun=false;a.rest=0;beep(1046,.3);buzz(200);toast("Rest over. Next round.");var p=$("amrap");if(p)p.classList.remove("resting");var rb=document.querySelector('[data-act="am-rest"]');if(rb)rb.textContent="Rest now";}}
+  updAmrap(w,s);
+ }else if(w&&(w.mode==="weekly"||w.mode==="sets"))tickWeekly(w,now);}
+},200);
+
+/* ---------- Events ---------- */
+document.addEventListener("click",function(e){
+ var t=e.target.closest("[data-act]");if(!t)return;var act=t.getAttribute("data-act");
+ if(act==="check")return;
+ if(act==="open"){S.view="workout";S.wid=t.getAttribute("data-w");S.sec=+t.getAttribute("data-s")||0;stopCardTimer();render();window.scrollTo(0,0);return;}
+ if(act==="home"){S.view="home";stopCardTimer();pauseAllAmrap();render();window.scrollTo(0,0);return;}
+ if(act==="tab"){S.sec=+t.getAttribute("data-i");stopCardTimer();pauseAllAmrap();render();return;}
+ if(act==="opt"){var w=W(S.wid);S.opts[w.id][t.getAttribute("data-o")]=+t.getAttribute("data-v");render();return;}
+ if(act==="ctimer"){audio();var k=t.getAttribute("data-k");if(S.ct&&S.ct.k===k){stopCardTimer();return;}stopCardTimer();var sec=+t.getAttribute("data-sec");var ivm=(t.getAttribute("data-ivmsg")||"").split("|");S.ct={k:k,n:+t.getAttribute("data-n"),total:sec,end:Date.now()+sec*1000,sw:+t.getAttribute("data-sw"),swMsg:t.getAttribute("data-swmsg"),iv:+t.getAttribute("data-iv"),ivMsg:ivm,lastIv:0,switched:false,lastBeep:null};t.classList.add("run");wake(true);if(S.ct.iv)toast(ivm[0]+" for 1 minute");return;}
+ if(act==="set"){audio();var sk=t.getAttribute("data-k"),si=+t.getAttribute("data-i"),sn=+t.getAttribute("data-n"),sd=S.sets[sk]||0;setCount(sk,sn,si<sd?si:si+1,si>=sd);return;}
+ if(act==="st-rest"){var w5=W(S.wid),s5=w5.sections[S.sec],r5=rndState(w5,s5),rp5=S.opts[w5.id].rest;audio();if(r5.restRun){r5.restRun=false;r5.rest=0;}else{r5.restRun=true;r5.rest=rp5;r5.restEnd=Date.now()+rp5*1000;r5.lastBeep=null;}updSetsPanel(w5,s5);return;}
+ if(act==="rd-rest"||act==="rd-reset"){var w4=W(S.wid),s4=w4.sections[S.sec],r4=rndState(w4,s4);audio();
+  if(act==="rd-reset"){S.rnd[w4.id+"|"+s4.id]=null;s4.items.forEach(function(_,i){S.checks[ck(w4.id,s4.id,i)]=false});render();return;}
+  if(r4.restRun){r4.restRun=false;r4.rest=0;}else{r4.restRun=true;r4.rest=60;r4.restEnd=Date.now()+60000;r4.lastBeep=null;}updRounds(w4,s4);return;}
+ if(act==="play"){openPlayer();return;}
+ if(act==="pl-close"){closePlayer();return;}
+ if(act==="pl-sound"){S.sound=!S.sound;t.innerHTML=S.sound?ICON.sound:ICON.mute;t.setAttribute("aria-label",(S.sound?"Mute":"Unmute")+" sounds");return;}
+ var P=S.player;
+ if(P&&act==="pl-toggle"){if(P.run){P.run=false;P.left=Math.max(0,(P.end-Date.now())/1000);}else{P.run=true;P.end=Date.now()+P.left*1000;audio();}t.innerHTML=P.run?ICON.pause:ICON.play;t.setAttribute("aria-label",P.run?"Pause":"Resume");return;}
+ if(P&&act==="pl-next"){var st=P.steps[P.i];if(st.kind==="work"){P.workDone++;setCheck(st.k,true,true);}goStep(P.i+1);return;}
+ if(P&&act==="pl-prev"){goStep(P.i-1);return;}
+ // AMRAP controls
+ if(act.indexOf("am-")===0){var w2=W(S.wid),s=w2.sections[S.sec],a=amrapState(w2,s);audio();
+  if(act==="am-toggle"){if(a.left<=0){a.left=s.minutes*60;a.rounds=0;}if(a.run){a.run=false;a.left=Math.max(0,(a.end-Date.now())/1000);if(a.restRun){a.rest=Math.max(0,(a.restEnd-Date.now())/1000);}wake(false);}else{a.run=true;a.end=Date.now()+a.left*1000;if(a.restRun)a.restEnd=Date.now()+a.rest*1000;wake(true);beep(880,.15);}t.textContent=a.run?"Pause":"Resume";return;}
+  if(act==="am-reset"){S.amrap[w2.id+"|"+s.id]=null;s.items.forEach(function(_,i){S.checks[ck(w2.id,s.id,i)]=false});wake(false);render();return;}
+  if(act==="am-r"){a.rounds=Math.max(0,a.rounds+(+t.getAttribute("data-d")));updAmrap(w2,s);return;}
+  if(act==="am-pick"){a.restPick=+t.getAttribute("data-r");t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b===t)});return;}
+  if(act==="am-rest"){if(a.restRun){a.restRun=false;a.rest=0;$("amrap").classList.remove("resting");t.textContent="Rest now";}else{if(!a.run){toast("Start the 30:00 clock first.");return;}startRest(a);t.textContent="Skip rest";}updAmrap(w2,s);return;}
+ }
+});
+document.addEventListener("change",function(e){var t=e.target;if(!(t.getAttribute&&t.getAttribute("data-act")==="check"))return;var k=t.getAttribute("data-k"),n=+t.getAttribute("data-n");
+ if(n>1){setCount(k,n,t.checked?n:0,false);return;}
+ setCheck(k,t.checked);var w=W(S.wid);if(w&&w.mode==="sets")updSetsPanel(w,w.sections[S.sec]);});
+function pauseAllAmrap(){for(var k in S.amrap){var a=S.amrap[k];if(a&&a.run){a.run=false;a.left=Math.max(0,(a.end-Date.now())/1000);if(a.restRun)a.rest=Math.max(0,(a.restEnd-Date.now())/1000);}}wake(false);}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&S.player)closePlayer();});
+
+/* ---------- Ask AI: offline answer engine (no API, no network) ---------- */
+var KB=[
+["What does AMRAP mean?","amrap as many rounds possible meaning",
+ "AMRAP means as many rounds as possible. You repeat a list of exercises for a set time, like 30 minutes, and count how many full rounds you finish. Next time, try to beat your round count. In FARA GYM, check off each move and the app counts the round and starts your rest.","amrap30"],
+["What is a circuit workout?","circuit circuits training explain",
+ "A circuit is a group of exercises done back to back with little or no rest, then repeated for a set number of rounds. It trains strength and fitness at the same time and keeps workouts short. Full Body Strength 30 is a good circuit to try.","fullbody30"],
+["What does 3 x 12 mean?","3x12 x sets reps repetitions mean notation 4x15 times",
+ "The first number is sets and the second is reps. 3 x 12 means do 12 repetitions, rest, and repeat that 2 more times for 3 sets in total. When a range is given, like 12-15, aim for the low end first and work toward the high end."],
+["What is the difference between a set and a rep?","set rep repetition difference",
+ "A rep is one complete movement, like one squat. A set is a group of reps done without stopping, like 12 squats. A workout usually has several sets of each exercise with short rests between them."],
+["How long should I rest between sets?","rest between sets how long seconds recovery",
+ "For most home workouts, 30 to 90 seconds works well. Rest closer to 30 seconds for light, high rep work and closer to 90 seconds for harder strength sets. FARA GYM starts a rest timer for you, and you can choose 30, 60 or 90 seconds."],
+["Which plan should I start with as a beginner?","beginner start first which plan new never exercised",
+ "Start with the Beginner's 4-Week At-Home Plan. It uses bodyweight moves, a chair and a wall, with two rest days each week. Once 4 rounds feel easy, move up to the 7-Day Home Workout Plan or Full Body Strength 30.","beginner4wk"],
+["How many days a week should I work out?","days week how often frequency times per week",
+ "Three to five days a week is a great target for most people. Beginners can start with 3 days and build up. Make sure to include at least one or two easier or rest days so your body can recover."],
+["How long should a workout be?","how long duration minutes session length",
+ "20 to 45 minutes is plenty for most goals. All plans in FARA GYM fit in that range. A short workout done consistently beats a long one you skip."],
+["Do I need equipment?","equipment need gear dumbbells weights home without",
+ "Not for most plans. The Beginner's 4-Week and 7-Day Home plans need only a mat, a chair and a wall or step. AMRAP 30 and the 4-3-2-1 workout use dumbbells, and AMRAP 30 also uses a pull-up bar and dip bars."],
+["Can I build muscle without weights?","build muscle without weights bodyweight calisthenics gain",
+ "Yes. Bodyweight exercises can build muscle, especially for beginners. The key is to keep making them harder over time: more reps, slower lowering, shorter rests, or harder versions like pike push-ups instead of push-ups."],
+["Should I warm up before a workout?","warm up warmup before start prepare",
+ "Yes. Spend 5 minutes getting warm: march in place, do arm circles, hip circles, and a few easy squats and lunges. Warming up raises your heart rate and helps your joints and muscles move better."],
+["Should I stretch or cool down after?","cool down cooldown stretch after finish",
+ "A short cool down helps you relax. Walk slowly for a couple of minutes, then stretch your main muscles for 20 to 30 seconds each. It is also a good time for deep breathing."],
+["What should I do on rest days?","rest day off day what do recovery",
+ "Rest days are part of the plan. Go for an easy walk, stretch, do gentle yoga or foam roll. Keep it relaxed so you come back fresh for your next workout. The 7-Day plan's Sunday is a guided active recovery day.","home7"],
+["What is active recovery?","active recovery meaning light",
+ "Active recovery is gentle movement on easy days, like walking, yoga, stretching or foam rolling. It keeps you moving without adding stress, and many people find it helps them feel less stiff."],
+["How do I make progress over time?","progress progressive overload harder improve increase",
+ "Make each week a little harder than the last. Add a few reps, add a set or round, slow down the lowering part of each rep, shorten rest, or move to a harder version of the exercise. Change one thing at a time."],
+["When should I add reps or a round?","add round more reps increase when too easy",
+ "When you can finish every set at the top of the rep range with good form, it is time to progress. On the Beginner's 4-Week plan, add a 4th round once 3 rounds feel easy."],
+["Is it normal to be sore after a workout?","sore soreness doms muscle pain after next day",
+ "Mild soreness a day or two after a new or harder workout is common and usually fades within a few days. Gentle movement can help. Sharp pain, swelling or pain in a joint is different; stop that exercise and check with a health professional."],
+["Should I work out when I am sore?","work out while sore train sore",
+ "If it is mild muscle soreness, light activity or training a different body part is usually fine. If you are very sore, take an active recovery day instead. Listen to your body."],
+["What if I miss a workout?","miss missed skip workout day",
+ "No problem. Just do the next workout on your plan instead of trying to cram two into one day. Consistency over weeks matters far more than any single session."],
+["Can I combine two workout plans?","combine mix two plans together both",
+ "You can, but keep total volume sensible. For example, do the 7-Day Home plan and swap one day for AMRAP 30. Avoid hard training for the same muscles two days in a row, and keep at least one easy day each week."],
+["What is the best time of day to work out?","best time morning evening night when",
+ "The best time is the one you can stick to. Morning workouts are easy to protect from a busy day; evening workouts can feel stronger. Pick a time and make it a habit."],
+["What should I eat before a workout?","eat before pre workout food meal snack",
+ "A light snack 30 to 90 minutes before works for most people, such as a banana, toast or yogurt. Avoid a large heavy meal right before training. Some people feel fine training on an empty stomach in the morning."],
+["What should I eat after a workout?","eat after post workout food meal recovery",
+ "Have a balanced meal with protein and carbs within a few hours, such as eggs and toast, chicken and rice, or Greek yogurt with fruit. Protein helps your muscles recover."],
+["How much protein do I need?","protein how much grams per day intake high protein",
+ "Many sports nutrition guidelines suggest roughly 1.4 to 2.0 grams of protein per kilogram of body weight per day for people who train regularly. Spread it across your meals. For advice specific to you, check with a dietitian."],
+["How much water should I drink?","water hydration drink hydrated how much",
+ "Drink water through the day and sip during workouts, more when it is hot or you sweat a lot. Pale yellow urine is a simple sign you are well hydrated."],
+["Can I lose belly fat with ab exercises?","belly fat lose stomach abs spot reduce flat stomach",
+ "You cannot choose where your body loses fat, so ab exercises alone will not burn belly fat. Fat loss comes from your overall habits: regular exercise, a modest calorie deficit, enough protein and good sleep. Ab work does make your core stronger."],
+["How do I lose weight?","lose weight weight loss fat loss slim",
+ "Combine regular workouts with a modest calorie deficit, plenty of protein, vegetables and good sleep. Strength training helps you keep muscle while you lose fat. Aim for steady progress rather than fast results."],
+["Is cardio or strength better for fat loss?","cardio vs strength better fat loss which",
+ "Both help. Cardio burns energy during the session, and strength training builds muscle that supports a healthy metabolism and shape. A mix of both, like the 7-Day Home plan, works well."],
+["How long until I see results?","how long results see notice changes weeks",
+ "Many people feel more energy and strength within 2 to 4 weeks. Visible changes usually take 6 to 12 weeks of consistent training and good eating. Take photos and track your reps to see progress sooner."],
+["Why am I not seeing results?","not seeing results plateau stuck no progress",
+ "Check four things: consistency, progression, food and sleep. Are you training most weeks, making workouts a bit harder over time, eating enough protein, and sleeping 7 hours or more? Small fixes in each add up."],
+["Push-ups are too hard. What can I do?","push up pushup too hard easier modify knee",
+ "Start with wall push-ups, then incline push-ups on a bench or table, then knee push-ups, then full push-ups. Keep your body in a straight line and lower slowly. Add a rep or two each week."],
+["How do I do a proper squat?","squat form proper technique how",
+ "Stand with feet shoulder width apart, toes slightly out. Sit your hips back and down, chest up, knees tracking over your toes. Go as low as you can with heels down, then push through your whole foot to stand."],
+["My knees hurt during squats or lunges. What should I do?","knee pain hurt squat lunge knees",
+ "Reduce the depth, slow down, and make sure your knees track in line with your toes. Try glute bridges or wall sits instead for now. If the pain is sharp or continues, stop and see a health professional."],
+["My lower back hurts during exercises. What should I do?","lower back pain hurt back ache",
+ "Stop the exercise that causes it. Brace your core, keep your back neutral, and use easier versions, like bending your knees on leg raises. If pain continues, see a health professional before training again."],
+["How should I breathe during exercise?","breathe breathing during exercise how",
+ "Breathe out during the hard part of the move, like pushing up, and breathe in as you lower. Never hold your breath for long. On planks and holds, keep slow, steady breaths."],
+["How long should I hold a plank?","plank hold how long seconds",
+ "Start with 20 to 30 seconds with good form, then build toward 45 to 60 seconds. A straight line from head to heels matters more than time. Stop when your hips sag."],
+["Burpees are too hard. What is an easier option?","burpee too hard easier alternative modify",
+ "Step back into the plank instead of jumping, step your feet back in, and stand up with a reach instead of a jump. You can also skip the push-up part until you get stronger."],
+["What are good low impact or quiet exercises?","low impact no jumping quiet apartment joints",
+ "Swap jumps for steps: marching high knees, step jacks instead of jumping jacks, squats instead of jump squats, and step back burpees. Glute bridges, wall sits, planks and lunges are all quiet."],
+["What is HIIT?","hiit high intensity interval training",
+ "HIIT means high intensity interval training: short bursts of hard effort followed by rest, repeated several times. It is time efficient. The 4-3-2-1 workout and Saturday on the 7-Day plan use this style.","fourthreetwoone"],
+["Should I do cardio every day?","cardio every day daily",
+ "Light cardio like walking every day is great. Hard cardio every day can leave you tired, so mix intense days with easy days and include rest."],
+["Can I work the same muscles two days in a row?","same muscles two days row back to back",
+ "Light work is fine, but it is better to give a muscle group about 48 hours between hard sessions. That is why the plans in FARA GYM rotate the focus from day to day."],
+["How do I stay motivated?","motivation motivated consistent stay discipline habit",
+ "Schedule workouts like appointments, start small, and track every session. Pair your workout with music you love, and celebrate small wins like one more rep. Be patient and stay consistent."],
+["How do I track my progress?","track progress measure log",
+ "Note your reps, rounds and hold times each week, take monthly photos, and notice how daily tasks feel. In AMRAP workouts, your round count is a clear measure to beat."],
+["Will lifting weights make women bulky?","women bulky lifting weights female toned",
+ "For most women, strength training builds a toned, strong look rather than bulk. Building large muscles takes years of specific training and eating. Lifting is great for strength, posture and bone health."],
+["How much sleep do I need?","sleep how much hours rest night",
+ "Most adults do best with 7 to 9 hours of sleep. Sleep is when your body recovers and adapts, so it matters as much as your workouts."],
+["What does each leg or each side mean?","each leg each side per leg per side mean",
+ "It means do the full number of reps on one side, then the same number on the other. 12 each leg means 12 on the left and 12 on the right."],
+["What is a wall sit?","wall sit what is",
+ "A wall sit is a hold where your back rests against a wall and your knees are bent to about 90 degrees, like sitting in an invisible chair. It builds strength in your thighs. It is on Tuesday of the 7-Day plan.","home7"],
+["Can I work out if I am pregnant or have a health condition?","pregnant pregnancy health condition injury medical heart blood pressure doctor",
+ "Please check with your doctor or a qualified health professional first. They can tell you which exercises are safe for you and what to avoid."],
+["How do the timers and checkboxes work in this app?","timer timers checkbox app how use work sets circles",
+ "Tap a timer button to count down a timed exercise; it beeps for the last 3 seconds. On the 7-Day plan, tap the numbered circles after each set and your rest timer starts on its own. Checking every move in a round counts the round. Guided sessions run a whole circuit hands free."],
+["Does FARA GYM save my progress or work offline?","save progress offline internet data saved",
+ "Checkboxes, rounds and timers reset when you close or reload, so every visit starts fresh. Ask AI works fully offline because all its answers are built into the app."]
+];
+var AI={open:false,msgs:[]};
+var SUGGEST=[5,4,23,16,30,25];
+/* ===== FARA AI engine v2: concept matching + live app data, fully offline ===== */
+var FOOD=[
+ /* name, aliases, category, serving label, serving grams, protein/100g, carbs/100g, kcal/100g */
+ ["Chicken breast, cooked","chicken|chicken breast|chicken breasts","Protein","120 g (about 4 oz)",120,31.0,0,165],
+ ["Eggs, whole, boiled","egg|eggs|boiled egg","Protein","1 large egg (50 g)",50,12.6,1.1,155],
+ ["Greek yogurt, plain nonfat","greek yogurt|yogurt|yoghurt|greek yoghurt","Protein","3/4 cup (170 g)",170,10.2,3.6,59],
+ ["Cottage cheese, 1% fat","cottage cheese|cottage","Protein","1/2 cup (113 g)",113,12.4,2.7,72],
+ ["Salmon, cooked","salmon","Protein","100 g fillet",100,22.1,0,206],
+ ["Tuna, canned in water","tuna|canned tuna","Protein","100 g, drained",100,25.5,0,116],
+ ["Lean ground beef (90%), cooked","beef|ground beef|lean beef|minced beef|mince","Protein","100 g",100,26.1,0,217],
+ ["Tofu, firm","tofu","Plant","100 g",100,15.8,4.3,145],
+ ["Milk, 2%","milk","Protein","1 cup (244 g)",244,3.3,4.8,50],
+ ["Rolled oats, dry","oat|oats|oatmeal|porridge|rolled oats","Carbs","1/2 cup (40 g)",40,13.2,67.7,379],
+ ["Brown rice, cooked","brown rice","Carbs","1 cup (195 g)",195,2.7,25.6,123],
+ ["White rice, cooked","white rice|rice","Carbs","1 cup (158 g)",158,2.7,28.2,130],
+ ["Sweet potato, baked","sweet potato|sweet potatoes|yam","Carbs","1 medium (114 g)",114,2.0,20.7,90],
+ ["Banana","banana|bananas","Carbs","1 medium (118 g)",118,1.1,22.8,89],
+ ["Pasta, cooked","pasta|spaghetti|noodle|noodles|macaroni","Carbs","1 cup (140 g)",140,5.8,30.9,158],
+ ["Quinoa, cooked","quinoa","Plant","1 cup (185 g)",185,4.4,21.3,120],
+ ["Lentils, boiled","lentil|lentils|dal|daal","Plant","1 cup (198 g)",198,9.0,20.1,116],
+ ["Almonds","almond|almonds|nuts","Nuts","28 g (about 23 nuts)",28,21.2,21.6,579],
+ ["Peanut butter","peanut butter|pb","Nuts","2 tbsp (32 g)",32,22.2,22.3,588],
+ ["Broccoli, raw","broccoli","Plant","1 cup chopped (91 g)",91,2.8,6.6,34]
+];
+var COUNTABLE={1:1,12:1,13:1};
+
+/* ---- text normalisation ---- */
+function normalize(s){
+ s=" "+String(s).toLowerCase().replace(/[’'`]/g,"").replace(/[^a-z0-9]+/g," ")+" ";
+ s=s.replace(/ (push|pull|step|sit|v|warm|cool) ups? /g," $1up ").replace(/ (push|pull|step|sit|v)ups /g," $1up ");
+ s=s.replace(/ press ups? /g," pushup ").replace(/ warmup /g," warmup ").replace(/ warm up /g," warmup ").replace(/ cool down /g," cooldown ");
+ return s.replace(/\s+/g," ").trim();
+}
+function sing(w){return w.length>3&&/s$/.test(w)&&!/ss$/.test(w)?w.slice(0,-1):w;}
+function singStr(s){return s.split(" ").map(sing).join(" ");}
+function stem2(w){w=sing(w);if(w.length>5&&/ing$/.test(w)){w=w.slice(0,-3);if(/([bdgmnprt])\1$/.test(w))w=w.slice(0,-1);}else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);return w;}
+var PHRASES=[
+ [/\b(\d+)\s*(x|by|times)\s*(\d+)\b/g," notation "],[/\b\d+ sets? of \d+\b/g," notation "],
+ [/\brest days?\b|\bdays? off\b|\boff days?\b|\brecovery days?\b/g," restday "],[/\bactive recovery\b/g," recovery "],
+ [/\bhow long\b/g," howlong "],[/\blower back\b/g," lowerback "],[/\b(each|per|one) (leg|side|arm)\b/g," eachside "],
+ [/\bwall sits?\b/g," wallsit "],[/\bevery ?day\b|\beach day\b/g," everyday "],[/\b(in a row|back to back|consecutive days?)\b/g," inarow "],
+ [/\blow impact\b|\bno jump(ing|s)?\b|\bwithout jump(ing)?\b/g," lowimpact "],[/\b(weight loss|lose weight|losing weight|fat loss|lose fat|burn fat|fat burning)\b/g," fatloss "],
+ [/\b(without|no) (weights?|equipment|dumbbells?|gym)\b/g," noweights "],[/\bbody ?weight\b/g," noweights "],[/\btime of day\b|\bwhat time\b|\bbest time\b/g," timeofday "],
+ [/\bas many rounds\b/g," amrap "],[/\bhigh intensity\b/g," hiit "],[/\blove handles?\b/g," belly "],[/\bsix pack\b/g," abs "],
+ [/\bgive up\b/g," quit "],[/\bget rid of\b/g," lose "],[/\b(lifting )?weights\b/g," strength "],[/\bcrunches\b/g," crunch "],[/\btoo (easy|simple)\b/g," easy "],[/\btoo (hard|difficult)\b/g," hard "],[/\bcant\b|\bcannot\b|\bcan not\b/g," hard "]
+];
+var STOPW=" a an the i im ive me my mine is are am was be been do does did to of for in on at it its and or can could should would will what whats how which who when where with your you this that these those get got any some there so if about just really very please tell let know want need like much many one as by from up out than then also too still ever we our us he she they them have has had most feel keep make made going take lot lots thing things way go doing done day days";
+var STOP={};STOPW.split(" ").forEach(function(w){if(w)STOP[w]=1;});
+var CONCEPTS={
+ amrap:"amrap",circuit:"circuit",notation:"notation",set:"set",rep:"rep repetition",
+ meaning:"mean meaning difference differ definition define vs versus",
+ rest:"rest break pause wait breather",time:"howlong long time duration minute second length",
+ session:"workout session train exercise routine",days:"often frequency frequent week weekly times",
+ beginner:"beginner start new newbie novice first never starter",plan:"plan program programme routine",
+ equipment:"equipment gear dumbbell kettlebell bar machine gym tool buy",
+ muscle:"muscle build gain mass grow hypertrophy",noweights:"noweights calisthenic",
+ warm:"warmup warm",cool:"cooldown stretch flexibility",restday:"restday",recovery:"recovery recover",
+ progress:"progress overload progression improve harder advance level stronger",add:"add increase more extra fourth",
+ round:"round",easy:"easy",sore:"sore doms stiff",normal:"normal ok okay common expected usual why",
+ while:"while still through",miss:"miss skip forgot forget lapse",combine:"combine mix both together two multiple merge",
+ timeofday:"timeofday morning evening night afternoon",eat:"eat food meal snack diet nutrition breakfast dinner lunch fuel",
+ before:"before pre prior",after:"after post",protein:"protein",water:"water hydrate hydration drink thirst fluid",
+ belly:"belly stomach tummy gut waist midsection",fat:"fat fatloss lose slim lean shred burn weight skinny overweight",
+ cardio:"cardio run jog aerobic running",strength:"strength lift resistance",
+ results:"result see notice change transform",notresult:"not plateau stuck nothing no isnt dont wont slow",
+ hard:"hard difficult unable struggle easier modify modification alternative weak impossible tough",
+ pushup:"pushup",squat:"squat",form:"form proper correct technique properly right",knee:"knee",
+ back:"back lowerback spine",pain:"pain hurt ache injury injure sharp painful strain",
+ breathe:"breathe breath breathing inhale exhale",plank:"plank",burpee:"burpee",
+ lowimpact:"lowimpact quiet apartment neighbor downstairs noise joint",hiit:"hiit interval tabata",
+ everyday:"everyday daily",samemuscle:"inarow same twice",
+ motivation:"motivation motivate lazy consistent consistency discipline habit quit stick bored",
+ track:"track log measure record journal monitor",bulky:"bulky bulk manly huge",women:"women woman female girl lady",
+ sleep:"sleep nap bed bedtime insomnia",eachside:"eachside",wallsit:"wallsit",
+ medical:"pregnant pregnancy condition heart pressure diabetes asthma doctor medical surgery illness sick disease medication postpartum",
+ app:"app timer checkbox button tap circle guided feature",save:"save offline internet data store reset memory"
+};
+var LEX={};Object.keys(CONCEPTS).forEach(function(c){CONCEPTS[c].split(" ").forEach(function(w){var s=stem2(w);(LEX[s]=LEX[s]||[]).push(c);});});
+var LEXW=Object.keys(LEX);
+var CON=["amrap!","circuit!","notation! set rep","rep! set meaning","rest! set time","beginner! plan","days! session","time! session!","equipment!","muscle! noweights","warm!","cool!","restday!","recovery!","progress!","add|easy! round rep","sore! normal","sore! session while","miss!","combine!","timeofday!","eat! before!","eat! after!","protein!","water!","belly! fat","fat!","cardio! strength! fat","results! time","results|fat! notresult!","pushup! hard!","squat! form!","knee! pain!","back! pain!","breathe!","plank! time!","burpee! hard!","lowimpact!","hiit!","cardio! everyday!","samemuscle!","motivation!","track! progress","bulky! women","sleep!","eachside!","wallsit!","medical!","app!","save!"];
+var ALT=[["what is an amrap workout","explain amrap"],["how do circuits work","what is circuit training"],["what does 4 x 15 mean","what does 3 sets of 12 mean"],["difference between sets and reps","what is a rep"],["how much rest between sets","how many seconds rest"],["where should a beginner start","best plan for a beginner"],["how often should i train","how many times a week should i exercise"],["how long should my workout be","how many minutes should i train"],["do i need dumbbells","what equipment do i need"],["can i gain muscle with bodyweight","build muscle at home without equipment"],["how do i warm up","do i need to warm up"],["should i stretch after","how to cool down"],["what to do on a day off","what should i do on rest days"],["what is active recovery"],["how do i get stronger","how to keep improving"],["when do i add a round","when should i increase reps"],["why am i sore","is doms normal"],["can i train while sore","should i exercise when sore"],["i missed a workout","i skipped a day"],["can i do two plans","can i mix workouts"],["is morning or evening better","when is the best time to exercise"],["what to eat before exercise","pre workout meal"],["what to eat after exercise","post workout meal"],["how much protein should i eat","protein per day"],["how much water should i drink","how to stay hydrated"],["how to lose belly fat","get a flat stomach"],["how can i lose weight","best way to burn fat"],["is cardio or weights better for fat loss"],["when will i see results","how fast will i see changes"],["why am i not losing weight","i hit a plateau"],["i cant do a pushup","easier pushup"],["how to squat properly","squat technique"],["knee pain when squatting","my knees hurt"],["lower back hurts","back pain during exercise"],["how to breathe when lifting"],["how long to hold a plank"],["easier burpee","i cant do burpees"],["quiet exercises for apartment","no jumping workout"],["what is hiit"],["can i do cardio daily"],["can i train legs two days in a row"],["how to stay consistent","i have no motivation"],["how do i track progress"],["will women get bulky","will i look manly"],["how many hours should i sleep"],["what does each side mean","what does per leg mean"],["what is a wall sit"],["can i work out while pregnant","i have a heart condition"],["how does the timer work","how do i use this app"],["does the app save my progress","does it work without internet"]];
+
+/* trigram vectors for paraphrase similarity */
+function tri(s){var v={};s="  "+s+"  ";for(var i=0;i<s.length-2;i++){var g=s.substr(i,3);v[g]=(v[g]||0)+1;}return v;}
+function cos(a,b){var d=0,na=0,nb=0,k;for(k in a){na+=a[k]*a[k];if(b[k])d+=a[k]*b[k];}for(k in b)nb+=b[k]*b[k];return na&&nb?d/Math.sqrt(na*nb):0;}
+var KBV=KB.map(function(e,i){return [e[0]].concat(ALT[i]||[]).map(function(t){return tri(normalize(t));});});
+var KBC=CON.map(function(c){var r=[],o=[];c.split(" ").forEach(function(x){if(!x)return;if(x.slice(-1)==="!")r.push(x.slice(0,-1));else o.push(x);});return {r:r,o:o};});
+
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i];for(j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[b.length];}
+function fixWord(w){if(LEX[w]||w.length<4)return w;if(w.length===4){var sw=w.split("").sort().join("");for(var q=0;q<LEXW.length;q++)if(LEXW[q].length===4&&LEXW[q].split("").sort().join("")===sw)return LEXW[q];return w;}var best=w,bd=9;for(var i=0;i<LEXW.length;i++){var d=lev(w,LEXW[i]);if(d<bd){bd=d;best=LEXW[i];}}return bd<=(w.length>=7?2:1)?best:w;}
+
+function analyze(q){
+ var n=normalize(q),p=" "+n+" ";
+ PHRASES.forEach(function(r){p=p.replace(r[0],r[1]);});
+ var words=p.trim().split(/\s+/).filter(Boolean);
+ var cs={},toks=[];
+ words.forEach(function(w){if(STOP[w])return;var s=fixWord(stem2(w));toks.push(s);(LEX[s]||[]).forEach(function(c){cs[c]=1;});});
+ return {raw:q,n:n,ns:singStr(n),toks:toks,c:cs,v:tri(n)};
+}
+function kbScore(A){
+ return KBC.map(function(k,i){
+  var s=0,mr=0,mo=0;k.r.forEach(function(c){if(c.split("|").some(function(x){return A.c[x];})){s+=3;mr++;}else s-=2.5;});k.o.forEach(function(c){if(A.c[c]){s+=1.5;mo++;}});
+  var sim=0;KBV[i].forEach(function(v){sim=Math.max(sim,cos(A.v,v));});
+  s+=sim*4;if(!mr&&!mo&&sim<.42)s=Math.min(s,0);
+  return {i:i,s:s,mr:mr,full:mr===k.r.length};
+ }).sort(function(a,b){return b.s-a.s});
+}
+
+/* ---- entity finders (exercises, foods, plans, days, muscles) ---- */
+var EXALIAS=[];Object.keys(EX).forEach(function(k){EXALIAS.push([singStr(normalize(EX[k].name)),k]);});
+[["pushup","pushup"],["push up","pushup"],["squat","bwsquat"],["air squat","bwsquat"],["lunge","lunge"],["dip","chairdip"],["tricep dip","chairdip"],["triceps dip","chairdip"],["curl","curl"],["bicep curl","curl"],["biceps curl","curl"],["row","row"],["dumbbell row","row"],["deadlift","deadlift"],["plank","fplank"],["forearm plank","fplank"],["high plank","plank"],["side plank","sideplank"],["crunch","bicycle"],["bicycle","bicycle"],["mountain climber","mountainclimber"],["climber","mountainclimber"],["high knee","highknee"],["jumping jack","jumpingjack"],["jack","jumpingjack"],["skater","skater"],["superman","superman"],["glute bridge","glutebridge"],["bridge","glutebridge"],["hip thrust","hipthrust"],["split squat","bulgarian"],["bulgarian","bulgarian"],["step up","stepup"],["stepup","stepup"],["calf raise","calfraise"],["wallsit","wallsit"],["pike","pikepushup"],["thruster","thruster"],["renegade row","renegade"],["kickback","kickback"],["tricep kickback","kickback"],["pressdown","pressdown"],["lateral raise","lateral"],["side raise","lateral"],["push press","pushpress"],["shoulder press","pushpress"],["overhead press","pushpress"],["pullup","pullup"],["chin up","pullup"],["chinup","pullup"],["goblet","goblet"],["donkey kick","donkeykick"],["fire hydrant","firehydrant"],["russian twist","russiantwist"],["dead bug","deadbug"],["deadbug","deadbug"],["leg raise","legraise"],["v up","vups"],["vup","vups"],["burpee","burpee"],["jump squat","jumpsquat"],["squat jump","jumpsquat"],["wall pushup","wallpushup"],["arm circle","armcircles"],["shoulder tap","shouldertaps"],["knee to elbow","kneeelbow"],["foam roll","foamroll"],["foam roller","foamroll"],["yoga","yoga"],["stretching","stretching"],["deep breathing","breathing"],["brisk walk","briskwalk"],["interval walk","intervalwalk"],["dance","dance"],["kettlebell","kbpull"],["high pull","kbpull"],["squat hold","squathold"],["reverse lunge","revlunge"],["single leg deadlift","sldl"],["lateral lunge","latlunge"],["side lunge","latlunge"],["l crunch","lcrunch"],["plank jack","plankjack"]].forEach(function(a){if(EX[a[1]])EXALIAS.push([singStr(normalize(a[0])),a[1]]);});
+EXALIAS.sort(function(a,b){return b[0].length-a[0].length;});
+function findIn(ns,list){
+ var t=" "+ns+" ",words=ns.split(" ");
+ for(var i=0;i<list.length;i++){if(t.indexOf(" "+list[i][0]+" ")>=0)return list[i][1];}
+ for(i=0;i<list.length;i++){var al=list[i][0];if(al.length<6||/\d/.test(al))continue;var L=al.split(" ").length;
+  for(var j=0;j+L<=words.length;j++){var win=words.slice(j,j+L).join(" ");if(lev(win,al)<=(al.length>=9?2:1))return list[i][1];}}
+ return null;
+}
+var FOODALIAS=[];FOOD.forEach(function(f,i){f[1].split("|").forEach(function(a){FOODALIAS.push([singStr(normalize(a)),i]);});});
+FOODALIAS.sort(function(a,b){return b[0].length-a[0].length;});
+function findFoods(ns){var t=" "+ns+" ",out=[],used=t;FOODALIAS.forEach(function(a){var k=" "+a[0]+" ";if(used.indexOf(k)>=0&&out.indexOf(a[1])<0){out.push(a[1]);used=used.split(k).join(" # ");}});
+ out.sort(function(x,y){var px=1e9,py=1e9;FOODALIAS.forEach(function(a){var k=t.indexOf(" "+a[0]+" ");if(k>=0){if(a[1]===x)px=Math.min(px,k);if(a[1]===y)py=Math.min(py,k);}});return px-py;});
+ if(!out.length){var f=findIn(ns,FOODALIAS.filter(function(a){return a[0].length>=5;}));if(f!==null)out.push(f);}return out;}
+var PLANALIAS=[["amrap 30","amrap30"],["amrap30","amrap30"],["muscle building","amrap30"],["amrap plan","amrap30"],["amrap workout","amrap30"],["full body","fullbody30"],["fullbody","fullbody30"],["4 3 2 1","fourthreetwoone"],["4321","fourthreetwoone"],["four three two one","fourthreetwoone"],["4 week","beginner4wk"],["four week","beginner4wk"],["4week","beginner4wk"],["beginner plan","beginner4wk"],["at home plan","beginner4wk"],["women plan","beginner4wk"],["womens plan","beginner4wk"],["she stylez","beginner4wk"],["7 day","home7"],["seven day","home7"],["7day","home7"],["home workout plan","home7"],["one week plan","home7"],["weekly plan","home7"]];
+var DAYN=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+function findDay(ns){var t=" "+ns+" ";if(/ today | tonight /.test(t))return new Date().getDay();if(/ tomorrow /.test(t))return (new Date().getDay()+1)%7;
+ for(var d=0;d<7;d++){if(t.indexOf(" "+DAYN[d]+" ")>=0||t.indexOf(" "+DAYN[d].slice(0,3)+" ")>=0)return d;}return -1;}
+var MUSCLES=[["glute","glute|glutes|butt|booty|bum|hip|hips","glute"],["core","abs|ab|core|abdominal|abdominals|oblique|obliques|six pack","abs|core|oblique"],["chest","chest|pec|pecs","chest"],["back","back|lat|lats|upper back","back|lats"],["arms","arm|arms|bicep|biceps|tricep|triceps","biceps|triceps"],["shoulders","shoulder|shoulders|delt|delts","shoulder"],["legs","leg|legs|thigh|thighs|quad|quads|hamstring|hamstrings|calf|calves|lower body","quads|hamstrings|calves|legs"],["cardio","cardio|stamina|endurance|conditioning","heart"]];
+function findMuscle(ns){var t=" "+ns+" ";for(var i=0;i<MUSCLES.length;i++){var al=MUSCLES[i][1].split("|");for(var j=0;j<al.length;j++)if(t.indexOf(" "+al[j]+" ")>=0)return MUSCLES[i];}return null;}
+function has(ns,re){return re.test(" "+ns+" ");}
+
+/* ---- answer builders ---- */
+function r1(x){return Math.round(x*10)/10;}
+function foodLine(f,grams,label){var g=grams/100;return '<b>'+esc(f[0])+'</b>, '+esc(label)+': <b>'+r1(f[5]*g)+' g protein</b>, '+r1(f[6]*g)+' g carbs, '+Math.round(f[7]*g)+' kcal.';}
+function exerciseUses(k){var u=[];WORKOUTS.forEach(function(w){var days=[];w.sections.forEach(function(s){if(s.items.some(function(it){return it.ex===k}))days.push(s.title);});if(days.length)u.push(w.name+" ("+days.join(", ")+")");});return u;}
+function exerciseWorkout(k){var r=null;WORKOUTS.forEach(function(w){if(!r)w.sections.forEach(function(s){if(!r&&s.items.some(function(it){return it.ex===k}))r=w.id;});});return r;}
+function sectionLine(w,s){
+ if(!s.items.length)return '<b>'+esc(s.title)+'</b>: rest day.';
+ return '<b>'+esc(s.title)+'</b>'+(s.label?", "+esc(s.label):"")+(s.mins?" ("+esc(s.mins)+" mins)":"")+':<br>'+s.items.map(function(it){var t=it.sets?(it.sets>1?it.sets+" x "+(it.reps||it.lbl):it.lbl):(it.target||it.seconds+" sec");return '&bull; '+esc(EX[it.ex].name)+' <span class="mut">'+esc(t)+'</span>';}).join("<br>");
+}
+var HELP="I can answer common workout questions, explain how to do any exercise in the app, list a plan's workout for any day, suggest exercises for a muscle group, and look up protein, carbs and calories for 20 athlete foods.";
+
+function aiAnswer(q){
+ var A=analyze(q),ns=A.ns,n=A.n,c=A.c;
+ if(!n)return {html:"Type a question and I'll do my best to help."};
+ var words=n.split(" ");
+ /* small talk */
+ if(words.length<=4&&has(n,/ (hi|hello|hey|salam|yo|hiya|good morning|good evening) /))return {type:"hi",html:"Hi! "+HELP+" What would you like to know?",rel:SUGGEST.slice(0,4)};
+ if(has(n,/ (thanks|thank you|thx|cheers|appreciate) /))return {type:"thanks",html:"You're welcome. Keep going, consistency today means stronger tomorrow!"};
+ if(has(n,/ what can you (do|answer)| help me | how do you work | who are you | what do you know /)&&words.length<=7)return {type:"help",html:HELP+" Try one of these:",rel:SUGGEST};
+ var kb=kbScore(A),top=kb[0],strong=top.s>=6&&top.full,ENT={pushup:1,squat:1,plank:1,burpee:1,wallsit:1,amrap:1,circuit:1,hiit:1,protein:1,eat:1,muscle:1},solid=top.full&&top.s>=3&&KBC[top.i].r.some(function(r){return !ENT[r];});
+
+ /* foods */
+ var foods=findFoods(ns),nutr=c.protein||has(n,/ (carb|carbs|carbohydrate|carbohydrates|calorie|calories|kcal|macro|macros|nutrition|nutritional|nutrient|nutrients) /);
+ var rankW=has(n,/ (most|highest|high|rich|best|top|good source|source|lowest|low|least|richest|list) /);
+ var wantP=c.protein,wantC=has(n,/ (carb|carbs|carbohydrate|carbohydrates|energy) /),wantK=has(n,/ (calorie|calories|kcal) /);
+ if(has(n,/ (food table|food guide|fuel guide|nutrition table|food list|what do athletes eat|athlete food|athletes eat) /))return {type:"foodguide",html:"The Athlete Fuel Guide lists 20 foods athletes eat most, with protein, carbs and calories per serving or per 100 g. You can sort and search it.",food:1};
+ if(foods.length&&(nutr||words.length<=4||has(n,/ how much | in | good | healthy /))&&!strong){
+  var gm=n.match(/\b(\d+(?:\.\d+)?)\s*(g|gr|gram|grams)\b/),cnt=n.match(/\b(\d+)\s+(eggs?|bananas?|sweet potato(es)?)\b/);
+  var lines=foods.slice(0,4).map(function(fi){var f=FOOD[fi];
+   if(gm&&foods.length===1)return foodLine(f,+gm[1],gm[1]+" g");
+   if(cnt&&COUNTABLE[fi]&&foods.length===1)return foodLine(f,f[4]*(+cnt[1]),cnt[1]+" x "+f[3]);
+   return foodLine(f,f[4],f[3])+' <span class="mut">Per 100 g: '+f[5]+' g protein, '+f[6]+' g carbs, '+f[7]+' kcal.</span>';});
+  return {type:"food:"+foods[0],html:lines.join("<br><br>")+'<br><span class="mut">Approximate values from USDA data; brands and cooking vary.</span>',food:1};
+ }
+ if(!foods.length&&(nutr||has(n,/ food | foods /))&&rankW&&!strong&&!has(n,/ how much .* (need|eat|should) /)){
+  var key=wantK?7:wantC?6:5,low=has(n,/ (lowest|low|least) /),lbl=key===7?"calories":key===6?"carbs":"protein";
+  var idx=FOOD.map(function(f,i){return i}).sort(function(a,b){return low?FOOD[a][key]-FOOD[b][key]:FOOD[b][key]-FOOD[a][key];}).slice(0,6);
+  return {type:"foodrank:"+lbl,html:(low?"Lowest":"Highest")+" in "+lbl+" per 100 g from the Athlete Fuel Guide:<br>"+idx.map(function(i,r){return (r+1)+". "+esc(FOOD[i][0])+' <span class="mut">'+FOOD[i][key]+(key===7?" kcal":" g")+'</span>';}).join("<br>"),food:1};
+ }
+
+ /* plans and days */
+ var plan=findIn(n,PLANALIAS),day=findDay(n);
+ if(has(n,/ (what|which) (plans|workouts|programs) (do you have|are there|are available|can i do)| list (the |all |your )?(plans|workouts)| show (me )?(the |all |your )?(plans|workouts)| (all|your) (plans|workouts) /)&&plan===null)
+  return {type:"plans",html:"FARA GYM has "+WORKOUTS.length+" plans:<br>"+WORKOUTS.map(function(w){return "&bull; <b>"+esc(w.name)+"</b>: "+esc(w.blurb);}).join("<br>")};
+ if(day>=0&&(plan!==null||c.session||c.plan||has(n,/ (do|schedule|on|today|tomorrow|tonight) /))&&!strong){
+  var ws=plan?[W(plan)]:WORKOUTS.filter(function(w){return w.sections.some(function(s){return s.day===day;});});
+  if(ws.length){var out=ws.map(function(w){var s=null;w.sections.forEach(function(x){if(x.day===day)s=x;});return s?'<span class="mut">'+esc(w.name)+'</span><br>'+sectionLine(w,s):"<b>"+esc(w.name)+"</b> has no session on "+DAYN[day]+".";});
+   return {type:"day:"+(plan||"all")+":"+day,html:out.join("<br><br>"),go:ws.length===1?ws[0].id:null};}
+  return {type:"day:none",html:"None of the plans has a session on "+DAYN[day]+". It's a good day for rest or a light walk."};
+ }
+ if(plan!==null&&!c.meaning&&!strong&&!solid){var w=W(plan);
+  return {type:"plan:"+plan,html:"<b>"+esc(w.name)+"</b><br>"+esc(w.blurb)+'<br><span class="mut">'+esc(w.format)+", "+esc(totalMinutes(w))+" min, "+w.sections.length+" "+(w.mode==="amrap"?"days":w.mode==="circuits"?"circuits":w.mode==="rounds"?"blocks":"days")+"</span><br>"+w.sections.map(function(s){return "&bull; "+esc(s.title)+(s.label?": "+esc(s.label.split(":")[0]):"");}).join("<br>"),go:plan};}
+
+ /* exercises */
+ var ex=findIn(ns,EXALIAS);
+ if(ex&&!strong&&!solid){var e=EX[ex],u=exerciseUses(ex);
+  var askM=has(n,/ (muscle|muscles|work|works|target|targets|good for|benefit|benefits) /)&&!has(n,/ how (to|do|should) /);
+  var h="<b>"+esc(e.name)+"</b> works: "+esc(e.muscles)+".";
+  if(!askM)h+="<br>"+e.steps.map(function(t,i){return (i+1)+". "+esc(t);}).join("<br>")+"<br><b>Tip:</b> "+esc(e.tip);
+  h+='<br><span class="mut">Equipment: '+esc(e.equip)+(u.length?". In your plans: "+esc(u.join("; ")):"")+'</span>';
+  return {type:"ex:"+ex,html:h,go:exerciseWorkout(ex)};
+ }
+
+ /* muscle groups */
+ var mg=findMuscle(ns);
+ if(mg&&!c.fat&&!c.pain&&!c.belly&&!c.sore&&!strong&&(c.session||c.muscle||c.strength||has(n,/ (move|moves|best|good|for|target|tone|toned|strengthen|bigger|stronger|grow|work|working|train|build|day) /))){
+  var kws=mg[2].split("|"),list=Object.keys(EX).filter(function(k){var m=EX[k].muscles.toLowerCase();return kws.some(function(x){return m.indexOf(x)>=0;});});
+  var used=list.filter(function(k){return exerciseUses(k).length;}).slice(0,10);
+  var days=[];WORKOUTS.forEach(function(w){w.sections.forEach(function(s){var l=(s.label||"").toLowerCase();if(kws.concat([mg[0]]).some(function(x){return l.indexOf(x.slice(0,4))>=0;})||(mg[0]==="legs"&&/lower body|legs/.test(l))||(mg[0]==="arms"&&/arms|upper/.test(l))||(mg[0]==="core"&&/core|abs/.test(l)))days.push(w.name+": "+s.title+" ("+s.label+")");});});
+  return {type:"muscle:"+mg[0],html:"Exercises in FARA GYM that train your "+esc(mg[0])+":<br>"+used.map(function(k){return "&bull; "+esc(EX[k].name);}).join("<br>")+(days.length?'<br><br><b>Sessions that focus on it:</b><br>'+days.slice(0,4).map(function(d){return "&bull; "+esc(d);}).join("<br>"):"")+'<br><span class="mut">Ask "how do I do" any of these for step by step form.</span>'};
+ }
+
+ /* knowledge base */
+ if(top.s>=2.6&&(top.full||top.s>=4)){
+  var e2=KB[top.i];return {type:"kb:"+top.i,html:esc(e2[2]),go:e2[3],rel:kb.slice(1,4).filter(function(x){return x.s>=3;}).map(function(x){return x.i;})};
+ }
+ var dym=kb.filter(function(x){return x.s>0;}).slice(0,3).map(function(x){return x.i;});
+ return {type:"none",html:dym.length?"I'm not completely sure what you mean. Did you mean one of these?":"I don't have an answer for that yet. "+HELP,rel:dym.length?dym:SUGGEST.slice(0,3),dym:1};
+}
+
+function aiRender(){
+ var el=$("ai-log");if(!el)return;
+ el.innerHTML=AI.msgs.map(function(m){
+  if(m.me)return '<div class="msg me">'+esc(m.t)+'</div>';
+  if(m.typing)return '<div class="msg bot typing" aria-label="Thinking"><i></i><i></i><i></i></div>';
+  var h='<div class="msg bot"><p>'+m.html+'</p>';
+  if(m.go){var gw=W(m.go);if(gw)h+='<button class="btn small" data-act="ai-go" data-w="'+m.go+'">Open '+esc(gw.name)+'</button>';}
+  if(m.food)h+='<button class="btn small" data-act="ai-food">Open Athlete Fuel Guide</button>';
+  if(m.rel&&m.rel.length)h+='<div class="rel"><span>'+(m.dym?"Did you mean":m.welcome?"Try asking":"Related")+'</span>'+m.rel.map(function(i){return '<button class="qchip" data-act="ai-q" data-i="'+i+'">'+esc(KB[i][0])+'</button>'}).join("")+'</div>';
+  return h+'</div>';
+ }).join("");
+ var last=el.lastElementChild;
+ if(last&&last.classList.contains("bot")&&!last.classList.contains("typing")&&last.offsetHeight>el.clientHeight*.6)el.scrollTop=last.offsetTop-el.offsetTop-8;else el.scrollTop=el.scrollHeight;
+}
+function aiAsk(q){
+ q=q.trim();if(!q)return;AI.msgs.push({me:1,t:q});AI.msgs.push({typing:1});aiRender();
+ setTimeout(function(){AI.msgs.pop();var a=aiAnswer(q);AI.msgs.push(a);aiRender();},reduceMotion?50:550);
+}
+function aiOpen(on){
+ AI.open=on;$("ai").hidden=!on;$("ai-fab").hidden=on;document.body.style.overflow=on?"hidden":"";
+ if(on){if(!AI.msgs.length){AI.msgs.push({html:"Hi, I'm FARA, your offline workout coach. Ask me how to do any exercise, what's on a plan today, which moves train a muscle, how much protein is in a food, or common questions about rest, soreness, food and progress.",rel:SUGGEST,welcome:1});}aiRender();setTimeout(function(){try{$("ai-in").focus({preventScroll:true})}catch(e){}},60);}
+}
+document.addEventListener("click",function(e){
+ var t=e.target.closest("[data-act]");if(!t)return;var a=t.getAttribute("data-act");
+ if(a==="ai-open")aiOpen(true);
+ else if(a==="ai-close")aiOpen(false);
+ else if(a==="ai-q")aiAsk(KB[+t.getAttribute("data-i")][0]);
+ else if(a==="food"){S.view="food";stopCardTimer();render();window.scrollTo(0,0);}
+ else if(a==="f-sort"){var col=+t.getAttribute("data-c");if(S.food.sort===col)S.food.dir*=-1;else{S.food.sort=col;S.food.dir=col===0?1:-1;}render();}
+ else if(a==="f-basis"){S.food.basis=t.getAttribute("data-v");render();}
+ else if(a==="f-cat"){S.food.cat=t.getAttribute("data-v");render();}
+ else if(a==="ai-food"){aiOpen(false);S.view="food";stopCardTimer();render();window.scrollTo(0,0);}
+ else if(a==="ai-go"){aiOpen(false);S.view="workout";S.wid=t.getAttribute("data-w");S.sec=0;var gw=W(S.wid),dw=new Date().getDay();gw.sections.forEach(function(s,i){if(s.day===dw)S.sec=i;});stopCardTimer();render();window.scrollTo(0,0);}
+});
+$("ai-form").addEventListener("submit",function(e){e.preventDefault();var i=$("ai-in");aiAsk(i.value);i.value="";});
+document.addEventListener("input",function(e){if(e.target&&e.target.id==="food-q"){S.food.q=e.target.value;var tb=$("food-rows");if(tb)tb.innerHTML=foodRows();}});
+/* keep the question bar above the on-screen keyboard */
+function fitAI(){
+ var box=$("ai"),vv=window.visualViewport;if(!box)return;
+ if(box.classList.contains("kb")&&vv&&vv.height<window.innerHeight*.92){box.style.top=vv.offsetTop+"px";box.style.height=vv.height+"px";box.style.bottom="auto";}
+ else{box.style.top="";box.style.height="";box.style.bottom="";}
+}
+$("ai-in").addEventListener("focus",function(){$("ai").classList.add("kb");fitAI();setTimeout(fitAI,250);setTimeout(fitAI,600);});
+$("ai-in").addEventListener("blur",function(){setTimeout(function(){if(document.activeElement!==$("ai-in")){$("ai").classList.remove("kb");fitAI();}},200);});
+if(window.visualViewport){window.visualViewport.addEventListener("resize",fitAI);window.visualViewport.addEventListener("scroll",fitAI);}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&AI.open)aiOpen(false);});
+
+/* ---------- Boot: 3 second loading screen ---------- */
+render();
+setTimeout(function(){var l=$("loader");l.classList.add("out");setTimeout(function(){l.hidden=true;},400);},3000);
+})();
+</script>
+
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
+</body>
+</html>

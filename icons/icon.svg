@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16263D"/><stop offset="1" stop-color="#0A121E"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD24A"/><stop offset="1" stop-color="#E9A800"/></linearGradient>
+ <radialGradient id="glow" cx=".5" cy=".42" r=".55"><stop offset="0" stop-color="#2B4A70" stop-opacity=".9"/><stop offset="1" stop-color="#16263D" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="512" height="512" fill="url(#bg)"/>
+<rect width="512" height="512" fill="url(#glow)"/>
+<g transform="translate(256 214)">
+ <circle r="138" fill="none" stroke="url(#gold)" stroke-width="34"/>
+ <circle r="112" fill="none" stroke="#E9A800" stroke-opacity=".35" stroke-width="3"/>
+ <rect x="-34" y="-151" width="68" height="18" rx="9" fill="#0E1828"/>
+ <rect x="-34" y="133" width="68" height="18" rx="9" fill="#0E1828"/>
+ <text x="0" y="78" text-anchor="middle" font-family="BSD" font-weight="900" font-size="226" fill="#FFFFFF">F</text>
+</g>
+<text x="256" y="452" text-anchor="middle" font-family="BSD" font-weight="900" font-size="74" letter-spacing="10" fill="#FFFFFF">FARA<tspan fill="#F5C518" dx="22">GYM</tspan></text>
+</svg>
